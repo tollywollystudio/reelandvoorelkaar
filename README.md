@@ -14,12 +14,10 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `assets/style.css` | Opmaak; palet en maten bovenaan als variabelen |
 | `assets/script.js` | Straatzoeker, datums, stratenlijst |
 | `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5` (kleurvarianten), `logo-wit` (footer), origineel |
-| `assets/slinger.svg` | Stijlelement voor de homepage |
+| `assets/slinger.svg` | Stijlelement uit het logo, alleen op de homepage |
 | `.github/workflows/pages.yml` | Automatische uitrol naar GitHub Pages |
 
-Elke pagina gebruikt een eigen logovariant en kleurpaar (`data-pair` op `<body>`): home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen.
-
-De slinger tussen de blokken bestaat uit `<section class="lane lane--r">` of `lane--l` met `--c1` (bovenste helft) en `--c2` (onderste helft). Laat elke volgende sectie beginnen met de `--c2` van de vorige, dan loopt de band door.
+Elke pagina gebruikt een eigen logovariant (home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen) en een lichte tint voor het grijze vlak (`data-pair` op `<body>`). Verder is de opmaak bewust sober: wit, dunne lijnen, baksteen voor knoppen.
 
 ## Lokaal bekijken
 
