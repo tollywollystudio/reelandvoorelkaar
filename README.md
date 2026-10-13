@@ -62,7 +62,7 @@ Zet nooit wachtwoorden, tokens of sleutels in deze repository.
 
 - [ ] Stratenlijst en kaart van het trekkingsgebied (toegezegd door Peter ter Hark, kwartiermaker ONS, sept. 2025)
 - [ ] Eén regel per buurt (Wantijbuurt, Transvaalbuurt, Indische Buurt, Land van Valk; Vogelbuurt aanvullen)
-- [ ] Eigen mailadres van de stichting; nu tijdelijk meuldijk@planet.nl (zoals in De Reelander)
+- [x] Mailadres: voorzitter@reelandvoorelkaar.nl
 - [ ] Vergaderdata 2027 en indientermijn
 - [ ] Bestuur: foto en twee zinnen per persoon, eventueel telefoonnummer
 - [ ] Checklist aanvraag en verantwoording laten vaststellen

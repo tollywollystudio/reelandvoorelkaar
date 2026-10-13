@@ -6,7 +6,7 @@ root = sys.argv[1]
 slinger = open(os.path.join(root, 'assets/slinger.svg')).read().replace('<svg ', '<svg class="hero__art" ', 1)
 
 NAV = [('gebied.html', 'Het gebied'), ('aanvragen.html', 'Aanvragen'), ('over-ons.html', 'Over ons')]
-MAIL = 'meuldijk@planet.nl'  # tijdelijk, tot het eigen adres van de stichting er is
+MAIL = 'voorzitter@reelandvoorelkaar.nl'
 
 def page(fn, title, desc, pair, logo, body):
     nav = ''.join(f'<a href="{h}"{" aria-current=\"page\"" if h == fn else ""}>{t}</a>' for h, t in NAV)
