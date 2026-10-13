@@ -229,7 +229,7 @@ img, svg { max-width: 100%; }
 .kopband::before { top: 0; border-color: var(--p1); border-bottom: 0; border-top-left-radius: 3.75rem; }
 .kopband::after { bottom: 0; border-color: var(--p2); border-top: 0; border-bottom-left-radius: 3.75rem; }
 @media (min-width: 48em) { .kopband { top: 4.5rem; height: 9rem; --b: 30px; } .kopband::before { border-top-left-radius: 4.5rem; } .kopband::after { border-bottom-left-radius: 4.5rem; } }
-@media (max-width: 47.99em) { .kopband { width: 30%; top: auto; bottom: 1.5rem; height: 5.5rem; --b: 16px; } .pagehead .lead { max-width: 100%; } }
+@media (max-width: 47.99em) { .kopband { width: 34%; top: 1.5rem; height: 4.25rem; --b: 14px; } .kopband::before { border-top-left-radius: 2.2rem; } .kopband::after { border-bottom-left-radius: 2.2rem; } .pagehead { padding-top: 7rem; } }
 .pagehead .wrap { position: relative; }
 @media (min-width: 48em) { .pagehead .wrap > * { max-width: 36rem; } }
 
