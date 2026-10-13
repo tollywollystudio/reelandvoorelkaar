@@ -25,6 +25,11 @@
 }
 @media (min-width: 48em) { :root { --gut: 2.5rem; } }
 
+/* kleurpaar van de logovariant per pagina */
+body { --p1: var(--blauw); --p2: var(--roze); }
+body[data-pair="gebied"]    { --p1: var(--oranje); --p2: var(--groen); }
+body[data-pair="aanvragen"] { --p1: var(--baksteen); --p2: var(--lichtblauw); }
+body[data-pair="over"]      { --p1: var(--groen); --p2: var(--baksteen); }
 body[data-pair="gebied"]    { --tint: color-mix(in srgb, var(--groen) 12%, white); }
 body[data-pair="aanvragen"] { --tint: color-mix(in srgb, var(--lichtblauw) 28%, white); }
 body[data-pair="over"]      { --tint: color-mix(in srgb, var(--mint) 30%, white); }
@@ -176,10 +181,65 @@ img, svg { max-width: 100%; }
 .small { font-size: .92rem; color: var(--ink-soft); }
 
 /* Footer */
-.foot { border-top: 1px solid var(--line); padding: 2.5rem 0; font-size: .95rem; }
-.foot__grid { display: grid; gap: 1.5rem; }
+.foot { background: var(--blauw); color: #fff; padding: 3rem 0 2.75rem; font-size: .95rem; }
+.foot__grid { display: grid; gap: 1.75rem; }
 @media (min-width: 48em) { .foot__grid { grid-template-columns: 1.5fr 1fr 1fr; } }
-.foot img { width: 8rem; height: auto; margin-bottom: .75rem; }
-.foot p { margin: 0 0 .3rem; color: var(--ink-soft); }
-.foot h2 { font-size: 1rem; letter-spacing: 0; margin-bottom: .4rem; }
+.foot img { width: 9.5rem; height: auto; margin-bottom: 1rem; }
+.foot a { color: #fff; }
+.foot p { margin: 0 0 .3rem; color: #d5dbf0; }
+.foot h2 { font-size: 1rem; letter-spacing: 0; margin-bottom: .4rem; color: #fff; }
 .foot ul { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
+
+/* Slinger 1: de geldstroom. Drie banen met om en om een bocht, zoals in het logo.
+   Het label in de band verwijst naar "STICHTING" in het logo. */
+.flow { --b: 26px; --r: 2.75rem; list-style: none; padding: 0; margin: 2.25rem 0 0; max-width: 46rem; }
+.flow li { position: relative; padding: calc(var(--b) + 1.1rem) 3.75rem calc(var(--b) + 1.4rem) 0; }
+.flow li + li { margin-top: calc(-1 * var(--b)); }
+.flow li:nth-child(even) { padding-left: 3.75rem; padding-right: 0; }
+/* bovenste helft: band + halve bocht in --c; onderste helft: halve bocht + band in --cn.
+   Rechte stukken stoppen een straal voor de bocht van de buurman, zodat de bochten rond blijven. */
+.flow li::before, .flow li::after { content: ""; position: absolute; height: 50%; border: 0 solid; pointer-events: none; }
+.flow li::before { top: 0; border-top-width: var(--b); border-color: var(--c); }
+.flow li::after { bottom: 0; border-bottom-width: var(--b); border-color: var(--cn); }
+.flow li:nth-child(odd)::before { left: var(--r); right: 0; border-right-width: var(--b); border-top-right-radius: var(--r); }
+.flow li:nth-child(odd)::after { left: var(--r); right: 0; border-right-width: var(--b); border-bottom-right-radius: var(--r); }
+.flow li:first-child::before { left: 0; }
+.flow li:nth-child(even)::before { left: 0; right: var(--r); border-left-width: var(--b); border-top-left-radius: var(--r); }
+.flow li:nth-child(even)::after { left: 0; right: var(--r); border-left-width: var(--b); border-bottom-left-radius: var(--r); }
+.flow li:last-child { padding-bottom: 0; }
+.flow li:last-child::after { display: none; }
+.flow li:last-child::before { border-left-width: 0; border-right-width: 0; border-radius: 0; height: auto; }
+.flow li:nth-child(odd):last-child::before { right: 0; }
+.flow li:nth-child(even):last-child::before { left: var(--r); right: 0; }
+.flow li:nth-child(1) { --c: var(--p1); --cn: var(--p2); --t: #fff; }
+.flow li:nth-child(2) { --c: var(--p2); --cn: var(--p1); --t: var(--blauw); }
+.flow li:nth-child(3) { --c: var(--p1); --cn: var(--p2); --t: #fff; }
+.flow__label {
+  position: absolute; z-index: 1; top: 0; left: 1rem; height: var(--b);
+  line-height: var(--b); color: var(--t); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+}
+.flow li:nth-child(odd):not(:first-child) .flow__label { left: calc(var(--r) + .75rem); }
+.flow li:nth-child(even) .flow__label { left: calc(var(--r) + .75rem); }
+.flow h3 { margin-bottom: .25rem; }
+.flow p { margin: 0; color: var(--ink-soft); }
+@media (max-width: 30em) { .flow { --b: 22px; --r: 2rem; } .flow li { padding-right: 2.5rem; } .flow li:nth-child(even) { padding-left: 2.5rem; padding-right: 0; } }
+
+/* Slinger 2: band met bocht in de paginakop, in de kleuren van de logovariant */
+.pagehead { position: relative; overflow: hidden; }
+.kopband { --b: 22px; position: absolute; right: 0; top: 3rem; width: min(38%, 26rem); height: 7.5rem; pointer-events: none; }
+.kopband::before, .kopband::after { content: ""; position: absolute; left: 0; right: 0; height: 50%; border: var(--b) solid; border-right: 0; }
+.kopband::before { top: 0; border-color: var(--p1); border-bottom: 0; border-top-left-radius: 3.75rem; }
+.kopband::after { bottom: 0; border-color: var(--p2); border-top: 0; border-bottom-left-radius: 3.75rem; }
+@media (min-width: 48em) { .kopband { top: 4.5rem; height: 9rem; --b: 30px; } .kopband::before { border-top-left-radius: 4.5rem; } .kopband::after { border-bottom-left-radius: 4.5rem; } }
+@media (max-width: 47.99em) { .kopband { width: 30%; top: auto; bottom: 1.5rem; height: 5.5rem; --b: 16px; } .pagehead .lead { max-width: 100%; } }
+.pagehead .wrap { position: relative; }
+@media (min-width: 48em) { .pagehead .wrap > * { max-width: 36rem; } }
+
+/* Variant B: thema's als kleurvlakken (aan met body class "met-tegels") */
+.met-tegels .tiles { gap: 1rem; }
+.met-tegels .tiles li { border: 0; padding: 1.4rem 1.4rem 1.5rem; background: var(--bg); }
+.met-tegels .tiles li:nth-child(1) { --bg: var(--lichtblauw); }
+.met-tegels .tiles li:nth-child(2) { --bg: var(--roze); }
+.met-tegels .tiles li:nth-child(3) { --bg: var(--mint); }
+.met-tegels .tiles li:nth-child(4) { --bg: color-mix(in srgb, var(--oker) 55%, white); }
+.met-tegels .tiles p { color: var(--blauw); }
