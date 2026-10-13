@@ -6,30 +6,32 @@ Onepager voor Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernem
 
 | Bestand | Inhoud |
 | --- | --- |
-| `index.html` | Alle teksten en de zes blokken van de pagina |
-| `assets/style.css` | Opmaak; kleuren en lettertype bovenaan als variabelen |
-| `assets/script.js` | Streept verlopen vergaderdata door |
-| `assets/kaart.svg` | Kaart van het gebied (nu nog placeholder) |
-| `assets/favicon.svg` | Tabblad-icoon (nu nog placeholder) |
+| `index.html` | Home: zo werkt het, straatzoeker, thema's, eerstvolgende indiendatum |
+| `gebied.html` | Kaart, vijf buurten, straatzoeker en stratenlijst |
+| `aanvragen.html` | Route, checklist, vergaderdata, mailknop |
+| `over-ons.html` | Bestuur en contactgegevens |
+| `assets/data.js` | Vergaderdata en stratenlijst; verschijnen automatisch op alle pagina's |
+| `assets/style.css` | Opmaak; palet en maten bovenaan als variabelen |
+| `assets/script.js` | Straatzoeker, datums, stratenlijst |
+| `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5` (kleurvarianten), `logo-wit` (footer), origineel |
+| `assets/slinger.svg` | Stijlelement voor de homepage |
 | `.github/workflows/pages.yml` | Automatische uitrol naar GitHub Pages |
+
+Elke pagina gebruikt een eigen logovariant en kleurpaar (`data-pair` op `<body>`): home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen.
+
+De slinger tussen de blokken bestaat uit `<section class="lane lane--r">` of `lane--l` met `--c1` (bovenste helft) en `--c2` (onderste helft). Laat elke volgende sectie beginnen met de `--c2` van de vorige, dan loopt de band door.
 
 ## Lokaal bekijken
 
-Open `index.html` in een browser, of draai `python3 -m http.server` in deze map en ga naar http://localhost:8000.
+Draai `python3 -m http.server` in deze map en ga naar http://localhost:8000.
+
+## Vergaderdatum of straat toevoegen
+
+Alleen in `assets/data.js`. Datums als JJJJ-MM-DD. Verlopen data worden doorgestreept, de eerstvolgende krijgt een label en staat ook op de homepage.
 
 ## Tekst aanpassen
 
-Zoek in `index.html` de tekst op en vervang hem. Elk blok staat in een eigen `<section>` met een id (`wat-we-doen`, `gebied`, `aanvragen`, `vergaderdata`, `contact`).
-
-## Vergaderdatum toevoegen
-
-Voeg in `index.html` onder `<tbody>` een rij toe:
-
-```html
-<tr data-date="2027-05-01"><td>1 mei 2027</td><td>15 mei 2027</td></tr>
-```
-
-`data-date` is de uiterste indiendatum als JJJJ-MM-DD. Na die datum wordt de rij automatisch doorgestreept.
+Zoek de tekst op in de HTML-pagina en vervang hem. Header en footer staan op elke pagina; wijzig ze op alle vier.
 
 ## Uitrol
 
@@ -41,14 +43,14 @@ Zet nooit wachtwoorden, tokens of sleutels in deze repository.
 
 Alle placeholders staan tussen blokhaken. Zoek op `[` om ze te vinden.
 
-- [ ] `[LOGO]` logo als SVG van Leen Oud in `assets/logo.svg`, plus favicon en og:image
-- [ ] `[KLEUR]` kleuren uit het logo in `assets/style.css`
+- [ ] og:image (deelafbeelding) maken van het logo
 - [ ] `[KAART]` kaart van het trekkingsgebied als SVG met straatnamen
 - [ ] `[BUURT 1]` t/m `[BUURT 5]` namen van de vijf buurten
-- [ ] `[STRAAT]` straatnamenlijst
+- [ ] `[STRATEN]` volledige straatnamenlijst met buurt in `assets/data.js`
 - [ ] `[THEMA 1]` t/m `[THEMA 4]` thema's waarvoor je kunt aanvragen
-- [ ] `[AANVULLEN]` checklist aanvraag en verantwoording
-- [ ] `[DATUM]` vergaderdata en indientermijnen
+- [ ] `[CHECKLIST]` checklist aanvraag en verantwoording definitief maken
+- [ ] `[X]` reactietermijnen invullen
+- [ ] `[VOORBEELDDATA]` echte vergaderdata in `assets/data.js`
 - [ ] `[MAILADRES]` mailadres van de stichting (komt 4 keer voor)
 - [ ] `[KVK-NUMMER]`
 - [ ] `[FUNCTIE]` functie van Wouter Sieuwerts; bestuursnamen laten bevestigen
