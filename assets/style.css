@@ -241,3 +241,7 @@ img, svg { max-width: 100%; }
 .met-tegels .tiles li:nth-child(3) { --bg: var(--mint); }
 .met-tegels .tiles li:nth-child(4) { --bg: color-mix(in srgb, var(--oker) 55%, white); }
 .met-tegels .tiles p { color: var(--blauw); }
+
+/* Lange regels en mailadressen mogen afbreken op smalle schermen */
+.board span { flex: 1 1 16rem; min-width: 0; }
+.facts dd, .foot p, .panel p { overflow-wrap: anywhere; min-width: 0; }

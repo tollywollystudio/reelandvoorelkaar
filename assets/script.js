@@ -52,6 +52,12 @@
 
   // Volledige stratenlijst
   document.querySelectorAll('[data-stratenlijst]').forEach(function (ul) {
+    if (!data.stratenCompleet) {
+      var p = document.createElement('p');
+      p.textContent = 'De volledige stratenlijst volgt binnenkort.';
+      ul.replaceWith(p);
+      return;
+    }
     data.straten.slice().sort(function (a, b) { return a.straat.localeCompare(b.straat, 'nl'); }).forEach(function (s) {
       var li = document.createElement('li'); li.textContent = s.straat; ul.appendChild(li);
     });

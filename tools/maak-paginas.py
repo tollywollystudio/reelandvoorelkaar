@@ -25,8 +25,8 @@ def page(fn, title, desc, pair, logo, body):
   <meta property="og:url" content="https://reelandvoorelkaar.nl/{fn}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="assets/style.css?v=202610132159">
-  <script src="assets/gate.js?v=202610132159"></script>
+  <link rel="stylesheet" href="assets/style.css?v=202610132204">
+  <script src="assets/gate.js?v=202610132204"></script>
 </head>
 <body data-pair="{pair}">
   <a class="skip" href="#inhoud">Naar de inhoud</a>
@@ -67,8 +67,8 @@ def page(fn, title, desc, pair, logo, body):
     </div>
   </footer>
 
-  <script src="assets/data.js?v=202610132159"></script>
-  <script src="assets/script.js?v=202610132159" defer></script>
+  <script src="assets/data.js?v=202610132204"></script>
+  <script src="assets/script.js?v=202610132204" defer></script>
 </body>
 </html>
 '''
@@ -119,10 +119,10 @@ home = f'''    <section class="hero" aria-labelledby="kop">
         <ol class="flow">
           <li><span class="flow__label">Stap 1</span><h3>Je betaalt mee</h3><p>Eigenaren en gebruikers van panden die geen woning zijn, betalen een kleine opslag op de onroerendezaakbelasting (OZB). De gemeente Dordrecht draagt dat af aan het Ondernemersfonds Dordrecht, ONS Dordrecht.</p></li>
           <li><span class="flow__label">Stap 2</span><h3>Het blijft in het Reeland</h3><p>Dordrecht is verdeeld in 24 trekkingsgebieden. Het fonds houdt het geld per gebied bij elkaar. Het Reeland is trekkingsgebied 15, en Stichting Reeland voor Elkaar beheert het geld voor dit gebied.</p></li>
-          <li><span class="flow__label">Stap 3</span><h3>Het komt terug</h3><p>Ondernemers, organisaties en bewoners uit het Reeland dienen een plan in. Het bestuur beoordeelt de aanvraag en ziet erop toe dat het geld goed wordt besteed.</p></li>
+          <li><span class="flow__label">Stap 3</span><h3>Het komt terug</h3><p>Ondernemers en organisaties uit het Reeland dienen samen een plan in. Het bestuur beoordeelt de aanvraag en ziet erop toe dat het geld goed wordt besteed.</p></li>
         </ol>''', label='h-werkt') + lane('l', 'groen', 'oranje', checker.format(k='home') + '''
         <p class="small mt-s">Of bekijk <a href="gebied.html">de vijf buurten en de kaart</a>.</p>''', id_='hoor-ik-erbij', label='h-check') + lane('r', 'oranje', 'oker', '''        <h2 id="h-thema">Waarvoor kun je aanvragen?</h2>
-        <p class="intro">Voor plannen die het gezamenlijk belang van ondernemers dienen en ook goed zijn voor het gebied. Bijvoorbeeld op deze terreinen:</p>
+        <p class="intro">Voor plannen van en voor ondernemers die ook goed zijn voor het gebied. Hoe meer ondernemers en organisaties uit het Reeland je plan steunen, hoe sterker je aanvraag. Bijvoorbeeld op deze terreinen:</p>
         <ul class="list list--2 tiles">
           <li><h3>Samen organiseren</h3><p>Ondernemers in het Reeland beter met elkaar verbinden en organiseren.</p></li>
           <li><h3>Gezamenlijke activiteiten</h3><p>Activiteiten die ondernemers samen opzetten, voor het hele gebied.</p></li>
@@ -152,24 +152,21 @@ gebied = '''    <section class="pagehead" aria-labelledby="kop">
       <div class="kopband" aria-hidden="true"></div>
       <div class="wrap">
         <h1 id="kop">Het gebied</h1>
-        <p class="lead">Trekkingsgebied 15, het Reeland, bestaat uit vijf buurten. Samen tellen ze ongeveer 175 adressen van ondernemers, scholen, verenigingen en organisaties.</p>
+        <p class="lead">Het Reeland ligt ten oosten van de binnenstad van Dordrecht, tussen de Oranjelaan en de Krommedijk, de N3 en het Wantij. Trekkingsgebied 15 bestaat uit vijf buurten met samen ongeveer 175 ondernemers, scholen, verenigingen en organisaties.</p>
       </div>
     </section>
 
 ''' + lane('r', 'oranje', 'groen', '''        <h2 id="h-buurten">Vijf buurten</h2>
         <p class="intro">Heb je een pand in een van deze buurten dat geen woning is? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>
         <ul class="list list--3">
-          <li><h3>Wantijbuurt</h3><p>[Eén regel over wat de buurt kenmerkt.]</p></li>
-          <li><h3>Transvaalbuurt</h3><p>[Eén regel over wat de buurt kenmerkt.]</p></li>
-          <li><h3>Vogelbuurt</h3><p>Met het Vogelplein als winkelhart. [Aanvullen.]</p></li>
-          <li><h3>Indische Buurt</h3><p>[Eén regel over wat de buurt kenmerkt.]</p></li>
-          <li><h3>Land van Valk</h3><p>[Eén regel over wat de buurt kenmerkt.]</p></li>
-        </ul>''', label='h-buurten') + lane('l', 'groen', 'baksteen', '''        <h2 id="h-kaart">Kaart</h2>
-        <figure class="map">
-          <!-- [KAART] vervangen door assets/kaart.svg met straatnamen en de buurten in de paletkleuren -->
-          <a href="assets/kaart.svg"><img src="assets/kaart.svg" alt="Kaart van trekkingsgebied 15 Reeland met de vijf buurten. Alle straten staan ook in de lijst verderop." width="800" height="600"></a>
-          <figcaption>De grenzen van het trekkingsgebied zoals vastgelegd met het Ondernemersfonds Dordrecht. Tik op de kaart om in te zoomen.</figcaption>
-        </figure>''', label='h-kaart') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
+          <li><h3>Wantijbuurt</h3><p>Het noordelijkste deel, aan het water. Ruim opgezet, met villa's, het Wantijpark en Villa Augustus.</p></li>
+          <li><h3>Transvaalbuurt</h3><p>Stadsbuurt dicht bij het centrum, met winkels en bedrijven rond de Transvaalstraat.</p></li>
+          <li><h3>Vogelbuurt</h3><p>Naoorlogse wijk met het Vogelplein als hart: supermarkt, cafetaria en buurtwerk vanuit Het Vogelnest.</p></li>
+          <li><h3>Indische Buurt</h3><p>Vooroorlogse stadsbuurt langs de Reeweg Oost, met bakker, slager, groenteboer en andere winkels aan de straat.</p></li>
+          <li><h3>Land van Valk</h3><p>Vooroorlogse woonbuurt met zorgvuldig metselwerk, aangevuld met de nieuwere bouw van Nieuw Land van Valk.</p></li>
+        </ul>''', label='h-buurten') + lane('l', 'groen', 'baksteen', '''        <h2 id="h-kaart">Grenzen van het gebied</h2>
+        <!-- [KAART] zodra de kaart van ONS er is: <figure class="map"> met assets/kaart.svg terugzetten -->
+        <p class="intro">De precieze grenzen van het trekkingsgebied zijn vastgelegd door het Ondernemersfonds Dordrecht. Een kaart met alle straten volgt. Twijfel je of je pand erbij hoort? Gebruik de straatzoeker hieronder of mail ons.</p>''', label='h-kaart') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
         <h3 class="mt">Alle straten</h3>
         <ul class="streets" data-stratenlijst></ul>''', id_='hoor-ik-erbij', label='h-check')
 
@@ -196,12 +193,13 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
             <h3>In je aanvraag</h3>
             <!-- [CHECKLIST] laten vaststellen door het bestuur -->
             <ul class="check">
-              <li>Naam en adres van je onderneming of organisatie in het Reeland</li>
+              <li>Naam en adres van je onderneming of organisatie in het Reeland, en of je eigenaar of huurder bent</li>
               <li>Contactpersoon met telefoonnummer en mailadres</li>
-              <li>Wat je wilt doen, waar en wanneer</li>
+              <li>Een korte beschrijving van je plan: wat, waar, wanneer en hoe lang</li>
               <li>Waarom het goed is voor de ondernemers en het gebied</li>
-              <li>Een begroting met het bedrag dat je aanvraagt</li>
-              <li>Andere bijdragen of sponsors, als die er zijn</li>
+              <li>Welke andere ondernemers of organisaties uit het Reeland je plan steunen</li>
+              <li>Een begroting met het bedrag dat je aanvraagt, en andere bijdragen of sponsors als die er zijn</li>
+              <li>Hoe je het plan bekend maakt</li>
             </ul>
           </div>
           <div>
@@ -225,7 +223,7 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
           </div>
           <div>
             <a class="btn" href="mailto:{MAIL}?subject=Aanvraag%20Reeland%20voor%20Elkaar">Mail je aanvraag</a>
-            <p class="small">Of mail naar <a href="mailto:{MAIL}">{MAIL}</a>. Vragen vooraf mogen ook.</p>
+            <p class="small">Of mail naar <a href="mailto:{MAIL}">{MAIL}</a>. Vragen vooraf mogen ook. Je kunt ook het aanvraagformulier op de site van <a href="https://ondernemersfondsdordrecht.nl/">ONS Dordrecht</a> gebruiken; kies dan trekkingsgebied 15, Het Reeland.</p>
           </div>
         </div>''', id_='indienen', label='h-indienen')
 
@@ -242,9 +240,9 @@ over = f'''    <section class="pagehead" aria-labelledby="kop">
         <p class="intro">Drie ondernemers uit het Reeland. Ze zitten in het bestuur op persoonlijke titel, niet namens hun eigen bedrijf. We zoeken nog versterking: ben jij ondernemer in het Reeland en wil je meedenken? Laat het ons weten.</p>
         <!-- [BESTUUR] per persoon foto, twee zinnen en eigen contactgegevens (voorstel Jolita) -->
         <ul class="board">
-          <li><strong>Jolita Meuldijk</strong><span>voorzitter, Schapenhok 94</span></li>
-          <li><strong>Akhshid Zia</strong><span>penningmeester, PLUS Vogelplein</span></li>
-          <li><strong>Wouter Sieuwerts</strong><span>bestuurslid, Tolly Wolly Studio en Lexlab</span></li>
+          <li><strong>Jolita Meuldijk</strong><span>voorzitter. Eigenaar van Het Schapenhok aan de Reeweg Oost.</span></li>
+          <li><strong>Akhshid Zia</strong><span>penningmeester. Ondernemer van PLUS Vogelplein, de supermarkt op het Vogelplein.</span></li>
+          <li><strong>Wouter Sieuwerts</strong><span>bestuurslid. Eigenaar van Tolly Wolly Studio en Lexlab aan de Bötgensstraat.</span></li>
         </ul>''', label='h-bestuur') + lane('l', 'baksteen', 'oker', f'''        <h2 id="h-contact">Contact en gegevens</h2>
         <p class="intro">Vragen, twijfel of je erbij hoort, of wil je je plan eerst bespreken? Mail ons. Je bent ook welkom om vooraf een vergadering bij te wonen.</p>
         <dl class="facts">
