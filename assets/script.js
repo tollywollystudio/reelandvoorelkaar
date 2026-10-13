@@ -7,11 +7,14 @@
   var next = data.vergaderingen.filter(function (v) { return v.indienen >= today; })[0];
 
   // Eerstvolgende indiendatum
-  document.querySelectorAll('[data-next="indienen"]').forEach(function (el) { el.textContent = next ? fmt(next.indienen) : 'nog niet bekend'; });
-  document.querySelectorAll('[data-next="vergadering"]').forEach(function (el) { el.textContent = next ? fmt(next.vergadering) : 'nog niet bekend'; });
+  document.querySelectorAll('[data-next="indienen"]').forEach(function (el) { el.textContent = next ? fmt(next.indienen) : 'volgt binnenkort'; });
+  document.querySelectorAll('[data-next="vergadering"]').forEach(function (el) { el.textContent = next ? fmt(next.vergadering) : 'volgt binnenkort'; });
 
   // Tabel met alle vergaderingen
   document.querySelectorAll('[data-dates]').forEach(function (tbody) {
+    if (!data.vergaderingen.length) {
+      tbody.innerHTML = '<tr><td colspan="2">De vergaderdata voor de komende periode volgen binnenkort.</td></tr>';
+    }
     data.vergaderingen.forEach(function (v) {
       var tr = document.createElement('tr');
       if (v.indienen < today) tr.className = 'is-past';
@@ -40,7 +43,9 @@
       out.className = 'result ' + (hit ? 'result--ja' : 'result--nee');
       out.textContent = hit
         ? 'Ja, ' + hit.straat + ' hoort bij het trekkingsgebied (' + hit.buurt + ').'
-        : 'Deze straat staat niet in onze lijst. Twijfel je? Mail ons, dan zoeken we het uit.';
+        : data.stratenCompleet
+          ? 'Deze straat staat niet in onze lijst. Twijfel je? Mail ons, dan zoeken we het uit.'
+          : 'Onze stratenlijst wordt nog aangevuld. Mail ons, dan laten we weten of je pand erbij hoort.';
     });
   });
 
