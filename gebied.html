@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Het gebied | Stichting Reeland voor Elkaar</title>
+  <meta name="description" content="Kaart en straten van trekkingsgebied 15 Reeland. Check of je pand erbij hoort.">
+  <meta property="og:title" content="Het gebied | Stichting Reeland voor Elkaar">
+  <meta property="og:description" content="Kaart en straten van trekkingsgebied 15 Reeland. Check of je pand erbij hoort.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-pair="gebied">
+  <a class="skip" href="#inhoud">Naar de inhoud</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="logo" href="index.html"><img src="assets/logo/logo-2.svg" alt="Stichting Reeland voor Elkaar" width="249" height="94"></a>
+      <nav class="nav" aria-label="Hoofdmenu">
+        <a href="gebied.html" aria-current="page">Het gebied</a><a href="aanvragen.html">Aanvragen</a><a href="over-ons.html">Over ons</a>
+        <a class="btn" href="aanvragen.html#indienen">Aanvraag indienen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhoud">
+    <section class="pagehead" aria-labelledby="kop">
+      <div class="wrap">
+        <span class="tag">Trekkingsgebied 15</span>
+        <h1 id="kop">Het gebied</h1>
+        <p class="lead">[CONCEPT] Het trekkingsgebied Reeland bestaat uit vijf buurten met samen ongeveer 175 adressen van ondernemers, scholen, verenigingen en organisaties.</p>
+      </div>
+    </section>
+
+    <section class="lane lane--r" style="--c1:var(--oranje);--c2:var(--groen)" aria-labelledby="h-kaart">
+      <div class="wrap">
+        <h2 id="h-kaart">Kaart</h2>
+        <figure class="map">
+          <!-- [KAART] vervangen door assets/kaart.svg met straatnamen en de buurten in de paletkleuren -->
+          <a href="assets/kaart.svg"><img src="assets/kaart.svg" alt="Kaart van trekkingsgebied 15 Reeland met straatnamen. Alle straten staan ook in de lijst verderop." width="800" height="600"></a>
+          <figcaption>Tik op de kaart om hem groot te openen en in te zoomen.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="lane lane--l" style="--c1:var(--groen);--c2:var(--baksteen)" aria-labelledby="h-buurten">
+      <div class="wrap">
+        <h2 id="h-buurten">Vijf buurten</h2>
+        <ul class="cards cards--3">
+          <li class="card"><h3>[BUURT 1]</h3><p>[Korte typering, bekende plekken.]</p></li>
+          <li class="card"><h3>[BUURT 2]</h3><p>[Korte typering, bekende plekken.]</p></li>
+          <li class="card"><h3>[BUURT 3]</h3><p>[Korte typering, bekende plekken.]</p></li>
+          <li class="card"><h3>[BUURT 4]</h3><p>[Korte typering, bekende plekken.]</p></li>
+          <li class="card"><h3>[BUURT 5]</h3><p>[Korte typering, bekende plekken.]</p></li>
+        </ul>
+      </div>
+    </section>
+    <section class="lane lane--r" style="--c1:var(--baksteen);--c2:var(--oker)" id="hoor-ik-erbij" aria-labelledby="h-check">
+      <div class="wrap">
+        <div class="check-panel">
+          <div>
+            <h2 id="h-check">Hoor ik erbij?</h2>
+            <p>Heb je een onderneming, school, vereniging of organisatie met een pand in het Reeland? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>
+          </div>
+          <div>
+            <form class="streetform" data-straatcheck>
+              <label for="straat-gebied">Typ je straatnaam</label>
+              <input id="straat-gebied" name="straat" list="straten-lijst" autocomplete="off" placeholder="Bijvoorbeeld Vogelplein">
+              <button class="btn" type="submit">Check</button>
+            </form>
+            <p class="result" role="status" aria-live="polite"></p>
+            <datalist id="straten-lijst"></datalist>
+          </div>
+        </div>
+        <h3 style="margin-top:2.5rem">Alle straten</h3>
+        <ul class="streets" data-stratenlijst></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <img src="assets/logo/logo-wit.svg" alt="Stichting Reeland voor Elkaar" width="249" height="94">
+        <p>Trekkingsgebied 15 van het <a href="https://www.ondernemersfondsdordrecht.nl/">Ondernemersfonds Dordrecht</a>.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p><a href="mailto:[MAILADRES]">[MAILADRES]</a></p>
+        <p>KvK [KVK-NUMMER]</p>
+      </div>
+      <div>
+        <h2>Pagina's</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gebied.html">Het gebied</a></li><li><a href="aanvragen.html">Aanvragen</a></li><li><a href="over-ons.html">Over ons</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

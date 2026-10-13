@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 452" fill="none" stroke-width="44" aria-hidden="true">
-  <path d="M0 22 H56 H364 A34 34 0 0 1 398 56" stroke="#aa514a"/>
-  <path d="M398 56 A34 34 0 0 1 364 90 H56 A34 34 0 0 0 22 124" stroke="#7d996d"/>
-  <path d="M22 124 A34 34 0 0 0 56 158 H364 A34 34 0 0 1 398 192" stroke="#df4f31"/>
-  <path d="M398 192 A34 34 0 0 1 364 226 H56 A34 34 0 0 0 22 260" stroke="#c1d3c6"/>
-  <path d="M22 260 A34 34 0 0 0 56 294 H364 A34 34 0 0 1 398 328" stroke="#ccb84b"/>
-  <path d="M398 328 A34 34 0 0 1 364 362 H56 A34 34 0 0 0 22 396" stroke="#1f2a83"/>
-  <path d="M22 396 A34 34 0 0 0 56 430 H364 H420" stroke="#f2bdc2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 404" fill="none" stroke-width="44" aria-hidden="true">
+  <path pathLength="1" d="M0 22 H52 H368 A30 30 0 0 1 398 52" stroke="#af5248"/>
+  <path pathLength="1" d="M398 52 A30 30 0 0 1 368 82 H52 A30 30 0 0 0 22 112" stroke="#7c986c"/>
+  <path pathLength="1" d="M22 112 A30 30 0 0 0 52 142 H368 A30 30 0 0 1 398 172" stroke="#e05031"/>
+  <path pathLength="1" d="M398 172 A30 30 0 0 1 368 202 H52 A30 30 0 0 0 22 232" stroke="#c1d2c5"/>
+  <path pathLength="1" d="M22 232 A30 30 0 0 0 52 262 H368 A30 30 0 0 1 398 292" stroke="#d2b649"/>
+  <path pathLength="1" d="M398 292 A30 30 0 0 1 368 322 H52 A30 30 0 0 0 22 352" stroke="#0d3183"/>
+  <path pathLength="1" d="M22 352 A30 30 0 0 0 52 382 H368 H420" stroke="#f6bdc1"/>
 </svg>
