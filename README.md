@@ -13,7 +13,7 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `assets/data.js` | Vergaderdata en stratenlijst; verschijnen automatisch op alle pagina's |
 | `assets/style.css` | Opmaak; palet en maten bovenaan als variabelen |
 | `assets/script.js` | Straatzoeker, datums, stratenlijst |
-| `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5` (kleurvarianten), `logo-wit` (footer), origineel |
+| `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5` (kleurvarianten), `logo-wit` (voor donkere achtergrond), origineel |
 | `assets/slinger.svg` | Stijlelement uit het logo, alleen op de homepage |
 | `.github/workflows/pages.yml` | Automatische uitrol naar GitHub Pages |
 

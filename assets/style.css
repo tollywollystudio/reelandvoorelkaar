@@ -180,14 +180,17 @@ img, svg { max-width: 100%; }
 
 .small { font-size: .92rem; color: var(--ink-soft); }
 
-/* Footer */
-.foot { background: var(--blauw); color: #fff; padding: 3rem 0 2.75rem; font-size: .95rem; }
+/* Footer: licht, in de tint van de pagina, met een band die de pagina afsluit */
+.foot { position: relative; background: var(--tint); padding: 6.5rem 0 2.75rem; font-size: .95rem; }
+.footband { --b: 18px; position: absolute; left: 0; top: 1.75rem; width: min(55%, 34rem); height: calc(var(--b) * 3.2); pointer-events: none; }
+.footband::before, .footband::after { content: ""; position: absolute; left: 0; right: 0; height: 50%; border: var(--b) solid; border-left: 0; }
+.footband::before { top: 0; border-color: var(--p1); border-bottom: 0; border-top-right-radius: calc(var(--b) * 1.6); }
+.footband::after { bottom: 0; border-color: var(--p2); border-top: 0; border-bottom-right-radius: calc(var(--b) * 1.6); }
 .foot__grid { display: grid; gap: 1.75rem; }
 @media (min-width: 48em) { .foot__grid { grid-template-columns: 1.5fr 1fr 1fr; } }
 .foot img { width: 9.5rem; height: auto; margin-bottom: 1rem; }
-.foot a { color: #fff; }
-.foot p { margin: 0 0 .3rem; color: #d5dbf0; }
-.foot h2 { font-size: 1rem; letter-spacing: 0; margin-bottom: .4rem; color: #fff; }
+.foot p { margin: 0 0 .3rem; color: var(--ink-soft); }
+.foot h2 { font-size: 1rem; letter-spacing: 0; margin-bottom: .4rem; }
 .foot ul { list-style: none; padding: 0; margin: 0; line-height: 1.9; }
 
 /* Slinger 1: de geldstroom. Drie banen met om en om een bocht, zoals in het logo.
