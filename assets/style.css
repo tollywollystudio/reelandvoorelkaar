@@ -1,0 +1,122 @@
+/* Stichting Reeland voor Elkaar
+   Kleuren zijn tijdelijk: vervangen door de kleuren uit het logo van Leen Oud. */
+:root {
+  --ink: #1d2327;
+  --ink-soft: #4a545b;
+  --paper: #ffffff;
+  --paper-alt: #f3f1ec;
+  --accent: #1f5f5b;      /* [KLEUR] hoofdkleur uit logo */
+  --accent-ink: #ffffff;
+  --line: #d9d5cc;
+  --muted: #8a9298;
+
+  /* Trade Gothic als webfont-licentie er is; anders Helvetica (advies Leen) */
+  --font: "Trade Gothic Next", "Trade Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --wrap: 68rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 { font-weight: 700; line-height: 1.15; margin: 0 0 .6em; }
+h1 { font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+h3 { font-size: 1.15rem; margin-top: 1.5em; }
+p { margin: 0 0 1em; max-width: 40em; }
+a { color: var(--accent); text-underline-offset: .15em; }
+a:focus-visible, .btn:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 48em) { .wrap { padding: 0 2rem; } }
+
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--paper); padding: .5rem 1rem; z-index: 10;
+}
+.skip:focus { left: 0; }
+
+/* Kop */
+.top { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 5; }
+.top__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+.logo { color: var(--ink); text-decoration: none; line-height: 1; }
+.logo__small { display: block; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
+.logo__big { display: block; font-weight: 700; font-size: 1.15rem; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; text-decoration: none;
+  padding: .8rem 1.3rem; border-radius: 2px;
+  margin: 0 .75rem .5rem 0;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn--small { padding: .5rem .9rem; font-size: .9rem; margin: 0; white-space: nowrap; }
+.link { font-weight: 700; }
+
+.hero { padding: 3.5rem 0 3rem; }
+@media (min-width: 48em) { .hero { padding: 6rem 0 5rem; } }
+.lead { font-size: 1.2rem; color: var(--ink-soft); }
+
+.block { padding: 3rem 0; }
+@media (min-width: 48em) { .block { padding: 4.5rem 0; } }
+.block--alt { background: var(--paper-alt); }
+
+/* Geldstroom in drie stappen */
+.steps { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
+@media (min-width: 48em) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li { border-top: 3px solid var(--accent); padding-top: 1rem; }
+.steps h3 { margin-top: .4rem; }
+.steps__nr { font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }
+
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags li { border: 1px solid var(--line); background: var(--paper); padding: .3rem .8rem; border-radius: 2rem; font-size: .95rem; }
+
+/* Kaart */
+.map { margin: 2rem 0 1rem; }
+.map__frame { display: block; border: 1px solid var(--line); background: var(--paper); }
+.map figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; }
+.streets summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.streets ul { columns: 2 12rem; padding-left: 1.2rem; }
+
+/* Aanvraag */
+.cols { display: grid; gap: 0 2.5rem; }
+@media (min-width: 48em) { .cols { grid-template-columns: 1fr 1fr; } }
+.check { list-style: none; padding: 0; }
+.check li { padding-left: 1.8rem; position: relative; margin-bottom: .5rem; }
+.check li::before {
+  content: ""; position: absolute; left: 0; top: .35em;
+  width: .9rem; height: .9rem; border: 2px solid var(--accent);
+}
+.small { font-size: .9rem; color: var(--ink-soft); }
+
+/* Vergaderdata */
+.dates { border-collapse: collapse; width: 100%; max-width: 36rem; margin-top: 1rem; }
+.dates th, .dates td { text-align: left; padding: .7rem .5rem; border-bottom: 1px solid var(--line); }
+.dates th { font-weight: 700; font-size: .9rem; }
+.dates tr.is-past td { color: var(--muted); text-decoration: line-through; }
+
+/* Bestuur */
+.board { list-style: none; padding: 0; }
+.board li { padding: .5rem 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.board__name { font-weight: 700; }
+.board__role { color: var(--ink-soft); }
+
+.foot { background: var(--ink); color: var(--paper); padding: 2rem 0; font-size: .9rem; }
+.foot a { color: var(--paper); }
+.foot p { margin: 0 0 .3rem; }
