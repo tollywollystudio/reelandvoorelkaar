@@ -17,9 +17,9 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `assets/script.js` | Straatzoeker, datums, stratenlijst |
 | `assets/gate.js` | Tijdelijke toegangscode tijdens de opbouw |
 | `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5`, `logo-wit`, origineel |
-| `assets/slinger.svg`, `assets/deelafbeelding.png` | Stijlelement en afbeelding voor delen op WhatsApp en sociale media |
+| `assets/slinger.svg`, `assets/deelafbeelding.png` | Stijlelement (twee kolommen, naar het blad van Leen; opnieuw maken met `tools/maak-stijlelement.py`) en afbeelding voor delen |
 
-Elke pagina gebruikt een eigen logovariant (home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen) en een lichte tint (`data-pair` op `<body>`). De slinger komt terug als stappenlijst (`ol.flow`) en als bocht in de paginakop (`.kopband`).
+Elke pagina gebruikt een eigen logovariant (home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen) en een lichte tint (`data-pair` op `<body>`). De slinger komt terug als stappenlijst (`ol.flow`), als bocht in de paginakop (`.kopband`) en als klein slingertje per thema in een eigen kleurpaar (`.list.tiles`), zoals Leen voorstelt: verschillende kleurcombinaties voor verschillende soorten aanvragen.
 
 ## Tekst aanpassen
 

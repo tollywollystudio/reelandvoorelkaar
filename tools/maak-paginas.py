@@ -25,8 +25,8 @@ def page(fn, title, desc, pair, logo, body):
   <meta property="og:url" content="https://reelandvoorelkaar.nl/{fn}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="assets/style.css?v=202610132204">
-  <script src="assets/gate.js?v=202610132204"></script>
+  <link rel="stylesheet" href="assets/style.css?v=202610132208">
+  <script src="assets/gate.js?v=202610132208"></script>
 </head>
 <body data-pair="{pair}">
   <a class="skip" href="#inhoud">Naar de inhoud</a>
@@ -67,8 +67,8 @@ def page(fn, title, desc, pair, logo, body):
     </div>
   </footer>
 
-  <script src="assets/data.js?v=202610132204"></script>
-  <script src="assets/script.js?v=202610132204" defer></script>
+  <script src="assets/data.js?v=202610132208"></script>
+  <script src="assets/script.js?v=202610132208" defer></script>
 </body>
 </html>
 '''
@@ -121,7 +121,7 @@ home = f'''    <section class="hero" aria-labelledby="kop">
           <li><span class="flow__label">Stap 2</span><h3>Het blijft in het Reeland</h3><p>Dordrecht is verdeeld in 24 trekkingsgebieden. Het fonds houdt het geld per gebied bij elkaar. Het Reeland is trekkingsgebied 15, en Stichting Reeland voor Elkaar beheert het geld voor dit gebied.</p></li>
           <li><span class="flow__label">Stap 3</span><h3>Het komt terug</h3><p>Ondernemers en organisaties uit het Reeland dienen samen een plan in. Het bestuur beoordeelt de aanvraag en ziet erop toe dat het geld goed wordt besteed.</p></li>
         </ol>''', label='h-werkt') + lane('l', 'groen', 'oranje', checker.format(k='home') + '''
-        <p class="small mt-s">Of bekijk <a href="gebied.html">de vijf buurten en de kaart</a>.</p>''', id_='hoor-ik-erbij', label='h-check') + lane('r', 'oranje', 'oker', '''        <h2 id="h-thema">Waarvoor kun je aanvragen?</h2>
+        <p class="small mt-s">Of bekijk <a href="gebied.html">de vijf buurten</a>.</p>''', id_='hoor-ik-erbij', label='h-check') + lane('r', 'oranje', 'oker', '''        <h2 id="h-thema">Waarvoor kun je aanvragen?</h2>
         <p class="intro">Voor plannen van en voor ondernemers die ook goed zijn voor het gebied. Hoe meer ondernemers en organisaties uit het Reeland je plan steunen, hoe sterker je aanvraag. Bijvoorbeeld op deze terreinen:</p>
         <ul class="list list--2 tiles">
           <li><h3>Samen organiseren</h3><p>Ondernemers in het Reeland beter met elkaar verbinden en organiseren.</p></li>
