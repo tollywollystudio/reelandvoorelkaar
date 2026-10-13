@@ -1,6 +1,6 @@
 # Stichting Reeland voor Elkaar
 
-Onepager voor Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemersfonds Dordrecht. Gewone HTML en CSS, zonder build-stap, CMS of database.
+Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemersfonds Dordrecht. Gewone HTML en CSS, zonder build-stap, CMS of database.
 
 ## Bestanden
 
@@ -51,7 +51,7 @@ Alle placeholders staan tussen blokhaken. Zoek op `[` om ze te vinden.
 - [ ] `[CHECKLIST]` checklist aanvraag en verantwoording definitief maken
 - [ ] `[X]` reactietermijnen invullen
 - [ ] `[VOORBEELDDATA]` echte vergaderdata in `assets/data.js`
-- [ ] `[MAILADRES]` mailadres van de stichting (komt 4 keer voor)
+- [ ] `[MAILADRES]` mailadres van de stichting (op alle pagina's, ook in de footer)
 - [ ] `[KVK-NUMMER]`
 - [ ] `[FUNCTIE]` functie van Wouter Sieuwerts; bestuursnamen laten bevestigen
 - [ ] `[CHECKEN]` via welke belasting ondernemers meebetalen
