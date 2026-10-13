@@ -1,14 +1,24 @@
 /* Stichting Reeland voor Elkaar
-   Kleuren zijn tijdelijk: vervangen door de kleuren uit het logo van Leen Oud. */
+   Kleuren uit het palet van Leen Oud (logo, oktober 2026). */
 :root {
-  --ink: #1d2327;
-  --ink-soft: #4a545b;
+  /* palet */
+  --blauw: #1f2a83;
+  --baksteen: #aa514a;
+  --oranje: #df4f31;
+  --groen: #7d996d;
+  --oker: #ccb84b;
+  --lichtblauw: #b7dee4;
+  --mint: #c1d3c6;
+  --roze: #f2bdc2;
+
+  /* toepassing: tekst alleen in blauw of baksteen (contrast AA) */
+  --ink: var(--blauw);
+  --ink-soft: #3d4470;
   --paper: #ffffff;
-  --paper-alt: #f3f1ec;
-  --accent: #1f5f5b;      /* [KLEUR] hoofdkleur uit logo */
+  --accent: var(--baksteen);
   --accent-ink: #ffffff;
-  --line: #d9d5cc;
-  --muted: #8a9298;
+  --line: #d6d8e6;
+  --muted: #8a8fae;
 
   /* Trade Gothic als webfont-licentie er is; anders Helvetica (advies Leen) */
   --font: "Trade Gothic Next", "Trade Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,7 +45,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -.01em; }
 h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
 h3 { font-size: 1.15rem; margin-top: 1.5em; }
 p { margin: 0 0 1em; max-width: 40em; }
-a { color: var(--accent); text-underline-offset: .15em; }
+a { color: var(--blauw); text-underline-offset: .15em; }
 a:focus-visible, .btn:focus-visible, summary:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
@@ -53,10 +63,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Kop */
 .top { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 5; }
-.top__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
-.logo { color: var(--ink); text-decoration: none; line-height: 1; }
-.logo__small { display: block; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
-.logo__big { display: block; font-weight: 700; font-size: 1.15rem; }
+.top__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .6rem 0; }
+.logo img { width: 9.5rem; height: auto; }
+@media (min-width: 48em) { .logo img { width: 11.5rem; } }
 
 .btn {
   display: inline-block;
@@ -69,29 +78,52 @@ img { max-width: 100%; height: auto; display: block; }
 .btn--small { padding: .5rem .9rem; font-size: .9rem; margin: 0; white-space: nowrap; }
 .link { font-weight: 700; }
 
-.hero { padding: 3.5rem 0 3rem; }
-@media (min-width: 48em) { .hero { padding: 6rem 0 5rem; } }
+.hero { padding: 3rem 0 3.5rem; }
+.hero__grid { display: grid; gap: 2.5rem; align-items: center; }
+.hero__art { width: 60%; max-width: 22rem; justify-self: end; }
+@media (min-width: 48em) { .hero__art { width: 100%; } }
+@media (min-width: 48em) {
+  .hero { padding: 5rem 0; }
+  .hero__grid { grid-template-columns: 1.3fr 1fr; }
+}
 .lead { font-size: 1.2rem; color: var(--ink-soft); }
 
-.block { padding: 3rem 0; }
-@media (min-width: 48em) { .block { padding: 4.5rem 0; } }
-.block--alt { background: var(--paper-alt); }
+.block { padding: 0 0 3.5rem; }
+@media (min-width: 48em) { .block { padding-bottom: 5rem; } }
+#gebied { background: color-mix(in srgb, var(--lichtblauw) 35%, white); }
+#vergaderdata { background: color-mix(in srgb, var(--roze) 30%, white); }
+
+/* Bochten tussen de blokken, naar het stijlelement van het logo */
+.bend { margin-bottom: 2.5rem; line-height: 0; }
+.bend svg { width: 100%; height: clamp(3rem, 7vw, 6rem); display: block; }
+.bend--l svg { transform: scaleX(-1); }
+@media (min-width: 48em) { .bend { margin-bottom: 3.5rem; } }
+
 
 /* Geldstroom in drie stappen */
 .steps { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
 @media (min-width: 48em) { .steps { grid-template-columns: repeat(3, 1fr); } }
-.steps li { border-top: 3px solid var(--accent); padding-top: 1rem; }
-.steps h3 { margin-top: .4rem; }
-.steps__nr { font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.steps li { position: relative; padding-top: .25rem; }
+.steps__bend { width: 5.5rem; height: auto; display: block; margin-bottom: .75rem; }
+.steps h3 { margin-top: .3rem; }
+.steps__nr { font-size: 2.5rem; font-weight: 700; color: var(--blauw); line-height: 1; }
 
 .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
-.tags li { border: 1px solid var(--line); background: var(--paper); padding: .3rem .8rem; border-radius: 2rem; font-size: .95rem; }
+.tags li { background: var(--paper); padding: .3rem .9rem .3rem .4rem; border-radius: 2rem; font-size: .95rem; display: flex; align-items: center; gap: .5rem; }
+.tags li::before { content: ""; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--c, var(--blauw)); }
+.tags li:nth-child(5n+1) { --c: var(--oranje); }
+.tags li:nth-child(5n+2) { --c: var(--groen); }
+.tags li:nth-child(5n+3) { --c: var(--oker); }
+.tags li:nth-child(5n+4) { --c: var(--baksteen); }
+.tags li:nth-child(5n+5) { --c: var(--blauw); }
+#wat-we-doen .tags li { border: 1px solid var(--line); }
 
 /* Kaart */
 .map { margin: 2rem 0 1rem; }
-.map__frame { display: block; border: 1px solid var(--line); background: var(--paper); }
+.map__frame { display: block; background: var(--paper); }
+.map__frame img { width: 100%; }
 .map figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; }
-.streets summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.streets summary { cursor: pointer; font-weight: 700; color: var(--blauw); }
 .streets ul { columns: 2 12rem; padding-left: 1.2rem; }
 
 /* Aanvraag */
@@ -101,7 +133,7 @@ img { max-width: 100%; height: auto; display: block; }
 .check li { padding-left: 1.8rem; position: relative; margin-bottom: .5rem; }
 .check li::before {
   content: ""; position: absolute; left: 0; top: .35em;
-  width: .9rem; height: .9rem; border: 2px solid var(--accent);
+  width: .9rem; height: .9rem; border: 3px solid var(--oker);
 }
 .small { font-size: .9rem; color: var(--ink-soft); }
 
@@ -117,6 +149,6 @@ img { max-width: 100%; height: auto; display: block; }
 .board__name { font-weight: 700; }
 .board__role { color: var(--ink-soft); }
 
-.foot { background: var(--ink); color: var(--paper); padding: 2rem 0; font-size: .9rem; }
+.foot { background: var(--blauw); color: var(--paper); padding: 2rem 0; font-size: .9rem; border-top: 1rem solid var(--roze); }
 .foot a { color: var(--paper); }
 .foot p { margin: 0 0 .3rem; }
