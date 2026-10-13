@@ -2,9 +2,10 @@
   var data = window.REELAND || { vergaderingen: [], straten: [] };
   var today = new Date().toISOString().slice(0, 10);
   var fmt = function (iso) {
+    if (!iso) return 'nader te bepalen';
     return new Date(iso + 'T12:00:00').toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
   };
-  var next = data.vergaderingen.filter(function (v) { return v.indienen >= today; })[0];
+  var next = data.vergaderingen.filter(function (v) { return (v.indienen || v.vergadering) >= today; })[0];
 
   // Eerstvolgende indiendatum
   document.querySelectorAll('[data-next="indienen"]').forEach(function (el) { el.textContent = next ? fmt(next.indienen) : 'volgt binnenkort'; });
@@ -17,7 +18,7 @@
     }
     data.vergaderingen.forEach(function (v) {
       var tr = document.createElement('tr');
-      if (v.indienen < today) tr.className = 'is-past';
+      if ((v.indienen || v.vergadering) < today) tr.className = 'is-past';
       else if (v === next) tr.className = 'is-next';
       [v.indienen, v.vergadering].forEach(function (d) {
         var td = document.createElement('td'); td.textContent = fmt(d); tr.appendChild(td);
