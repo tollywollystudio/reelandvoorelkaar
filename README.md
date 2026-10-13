@@ -33,7 +33,18 @@ Zoek de tekst op in de HTML-pagina en vervang hem. Header en footer staan op elk
 
 ## Uitrol
 
-Elke push naar `main` zet de site via GitHub Actions op GitHub Pages. Eenmalig instellen: Settings > Pages > Source: GitHub Actions. Voor een eigen domein vul je daar het domein in en zet je bij de registrar een CNAME naar `<account>.github.io`.
+Elke push naar `main` zet de site via GitHub Actions op GitHub Pages: https://reelandvoorelkaar.nl (www stuurt door).
+
+Instellingen (Settings > Pages): Source "GitHub Actions", Custom domain `reelandvoorelkaar.nl`, Enforce HTTPS aan.
+
+DNS bij mijn.host:
+
+| Naam | Type | Waarde |
+| --- | --- | --- |
+| (leeg) | A | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 |
+| www | CNAME | tollywollystudio.github.io |
+
+Mail (MX, SPF, DKIM, DMARC, `mail`) blijft bij mijn.host.
 
 Zet nooit wachtwoorden, tokens of sleutels in deze repository.
 
