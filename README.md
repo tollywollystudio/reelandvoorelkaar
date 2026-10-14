@@ -10,6 +10,7 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `gebied.html` | Vijf buurten, kaart, straatzoeker en stratenlijst |
 | `aanvragen.html` | Vijf stappen, checklist, vergaderdata, mailknop |
 | `over-ons.html` | Doel, bestuur, KvK en contact |
+| `aanvraag.html` | Aanvraagformulier met de vragen van ONS; maakt een mail aan voorzitter@ (script `assets/aanvraag.js`) |
 | `privacy.html`, `404.html` | Privacyverklaring en foutpagina |
 | `tools/maak-paginas.py` | Bouwt alle pagina's; teksten staan hier |
 | `assets/data.js` | Vergaderdata en stratenlijst |
@@ -17,6 +18,7 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `assets/script.js` | Straatzoeker, datums, stratenlijst |
 | `assets/gate.js` | Tijdelijke toegangscode tijdens de opbouw |
 | `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5`, `logo-wit`, origineel |
+| `assets/foto-oprichting.jpg` | Foto oprichting bij de notaris, 25-09-2025 (Peter ter Hark) |
 | `assets/slinger.svg`, `assets/deelafbeelding.png` | Stijlelement (twee kolommen, naar het blad van Leen; opnieuw maken met `tools/maak-stijlelement.py`) en afbeelding voor delen |
 
 Elke pagina gebruikt een eigen logovariant (home blauw/roze, gebied oranje/groen, aanvragen baksteen/lichtblauw, over ons groen/baksteen) en een lichte tint (`data-pair` op `<body>`). De slinger komt terug als stappenlijst (`ol.flow`), als bocht in de paginakop (`.kopband`) en als klein slingertje per thema in een eigen kleurpaar (`.list.tiles`), zoals Leen voorstelt: verschillende kleurcombinaties voor verschillende soorten aanvragen.

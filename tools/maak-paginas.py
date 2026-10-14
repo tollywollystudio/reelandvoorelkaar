@@ -5,6 +5,9 @@ import sys, os
 root = sys.argv[1]
 slinger = open(os.path.join(root, 'assets/slinger.svg')).read().replace('<svg ', '<svg class="hero__art" ', 1)
 
+import time
+V = time.strftime('%Y%m%d%H%M')  # versienummer tegen oude cache
+
 NAV = [('gebied.html', 'Het gebied'), ('aanvragen.html', 'Aanvragen'), ('over-ons.html', 'Over ons')]
 MAIL = 'voorzitter@reelandvoorelkaar.nl'
 
@@ -25,8 +28,8 @@ def page(fn, title, desc, pair, logo, body):
   <meta property="og:url" content="https://reelandvoorelkaar.nl/{fn}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="assets/style.css?v=202610132208">
-  <script src="assets/gate.js?v=202610132208"></script>
+  <link rel="stylesheet" href="assets/style.css?v={V}">
+  <script src="assets/gate.js?v={V}"></script>
 </head>
 <body data-pair="{pair}">
   <a class="skip" href="#inhoud">Naar de inhoud</a>
@@ -36,7 +39,7 @@ def page(fn, title, desc, pair, logo, body):
       <a class="logo" href="index.html"><img src="assets/logo/logo-{logo}.svg" alt="Stichting Reeland voor Elkaar" width="249" height="94"></a>
       <nav class="nav" aria-label="Hoofdmenu">
         {nav}
-        <a class="btn" href="aanvragen.html#indienen">Aanvraag indienen</a>
+        <a class="btn" href="aanvraag.html">Aanvraag indienen</a>
       </nav>
     </div>
   </header>
@@ -67,8 +70,9 @@ def page(fn, title, desc, pair, logo, body):
     </div>
   </footer>
 
-  <script src="assets/data.js?v=202610132208"></script>
-  <script src="assets/script.js?v=202610132208" defer></script>
+  <script src="assets/data.js?v={V}"></script>
+  {f'<script src="assets/aanvraag.js?v={V}" defer></script>' if fn == 'aanvraag.html' else ''}
+  <script src="assets/script.js?v={V}" defer></script>
 </body>
 </html>
 '''
@@ -159,12 +163,13 @@ gebied = '''    <section class="pagehead" aria-labelledby="kop">
 ''' + lane('r', 'oranje', 'groen', '''        <h2 id="h-buurten">Vijf buurten</h2>
         <p class="intro">Heb je een pand in een van deze buurten dat geen woning is? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>
         <ul class="list list--3">
-          <li><h3>Wantijbuurt</h3><p>Het noordelijkste deel, aan het water. Ruim opgezet, met villa's, het Wantijpark en Villa Augustus.</p></li>
-          <li><h3>Transvaalbuurt</h3><p>Stadsbuurt dicht bij het centrum, met winkels en bedrijven rond de Transvaalstraat.</p></li>
-          <li><h3>Vogelbuurt</h3><p>Naoorlogse wijk met het Vogelplein als hart: supermarkt, cafetaria en buurtwerk vanuit Het Vogelnest.</p></li>
-          <li><h3>Indische Buurt</h3><p>Vooroorlogse stadsbuurt langs de Reeweg Oost, met bakker, slager, groenteboer en andere winkels aan de straat.</p></li>
+          <li><h3>Wantijbuurt</h3><p>Het groene noorden aan het Wantij, gebouwd in de jaren dertig. Ruim opgezet, met villa's, het Wantijpark en Villa Augustus.</p></li>
+          <li><h3>Transvaalbuurt</h3><p>De oudste buurt, gebouwd rond 1900 tegen de negentiende-eeuwse stadsrand aan. Een compacte stadsbuurt met winkels en bedrijven rond de Transvaalstraat.</p></li>
+          <li><h3>Vogelbuurt</h3><p>Gebouwd in de jaren vijftig, na de oorlog. Met het Vogelplein als hart: supermarkt, cafetaria en buurtwerk vanuit Het Vogelnest.</p></li>
+          <li><h3>Indische Buurt</h3><p>Het hart van het Reeland, gebouwd tussen 1910 en 1940 op voormalige tuinderijen. Langs de Reeweg Oost zitten bakker, slager, groenteboer en andere winkels.</p></li>
           <li><h3>Land van Valk</h3><p>Vooroorlogse woonbuurt met zorgvuldig metselwerk, aangevuld met de nieuwere bouw van Nieuw Land van Valk.</p></li>
-        </ul>''', label='h-buurten') + lane('l', 'groen', 'baksteen', '''        <h2 id="h-kaart">Grenzen van het gebied</h2>
+        </ul>''', label='h-buurten') + lane('r', 'groen', 'oranje', '''        <h2 id="h-naam">Waar de naam vandaan komt</h2>
+        <p class="intro">Een ree is een rechte grenslijn. In 1560 trokken landmeters zo'n lijn tussen de stad Dordrecht en de toenmalige heerlijkheid Dubbeldam. De Reeweg volgt die oude grens nog steeds. Het gebied werd later bij Dordrecht gevoegd en buurt voor buurt bebouwd: van de Transvaalbuurt rond 1900 tot Plan Tij in 2004.</p>''', label='h-naam') + lane('l', 'groen', 'baksteen', '''        <h2 id="h-kaart">Grenzen van het gebied</h2>
         <!-- [KAART] zodra de kaart van ONS er is: <figure class="map"> met assets/kaart.svg terugzetten -->
         <p class="intro">De precieze grenzen van het trekkingsgebied zijn vastgelegd door het Ondernemersfonds Dordrecht. Een kaart met alle straten volgt. Twijfel je of je pand erbij hoort? Gebruik de straatzoeker hieronder of mail ons.</p>''', label='h-kaart') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
         <h3 class="mt">Alle straten</h3>
@@ -175,15 +180,15 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
       <div class="kopband" aria-hidden="true"></div>
       <div class="wrap">
         <h1 id="kop">Aanvraag indienen</h1>
-        <p class="lead">Ondernemers, maatschappelijke organisaties en bewoners uit het Reeland kunnen een aanvraag doen. Je stuurt je plan met een begroting per mail. Het bestuur beoordeelt het in de eerstvolgende vergadering.</p>
-        <div class="actions"><a class="btn" href="#indienen">Naar indienen</a></div>
+        <p class="lead">Ondernemers en organisaties uit het Reeland kunnen een aanvraag doen. Je vult het aanvraagformulier in en stuurt je plan met een begroting mee. Het bestuur beoordeelt het in de eerstvolgende vergadering.</p>
+        <div class="actions"><a class="btn" href="aanvraag.html">Naar het aanvraagformulier</a></div>
       </div>
     </section>
 
 ''' + lane('r', 'baksteen', 'lichtblauw', '''        <h2 id="h-route">Van plan tot verantwoording</h2>
         <ol class="flow">
           <li><span class="flow__label">Stap 1</span><h3>Plan maken</h3><p>Beschrijf wat je wilt doen en wat het kost. Twijfel je? Wij denken mee en helpen zoeken naar samenwerking met anderen in het gebied.</p></li>
-          <li><span class="flow__label">Stap 2</span><h3>Indienen</h3><p>Mail je aanvraag met begroting voor de indiendatum.</p></li>
+          <li><span class="flow__label">Stap 2</span><h3>Indienen</h3><p>Vul het aanvraagformulier in en stuur projectplan en begroting mee, voor de indiendatum.</p></li>
           <li><span class="flow__label">Stap 3</span><h3>Vergadering</h3><p>Het bestuur bespreekt je aanvraag. Je bent welkom om je plan toe te lichten.</p></li>
           <li><span class="flow__label">Stap 4</span><h3>Besluit</h3><p>Na de vergadering hoor je of je aanvraag is toegekend en onder welke voorwaarden.</p></li>
           <li><span class="flow__label">Stap 5</span><h3>Verantwoorden</h3><p>Na afloop laat je zien hoe het geld is besteed.</p></li>
@@ -218,11 +223,11 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
           <tbody data-dates></tbody>
         </table>''', id_='vergaderdata', label='h-data') + lane('l', 'oranje', 'blauw', f'''        <div class="panel">
           <div>
-            <h2 id="h-indienen">Klaar? Mail je aanvraag</h2>
+            <h2 id="h-indienen">Klaar? Vul het formulier in</h2>
             <p>Eerstvolgende indiendatum: <strong data-next="indienen">&nbsp;</strong>.</p>
           </div>
           <div>
-            <a class="btn" href="mailto:{MAIL}?subject=Aanvraag%20Reeland%20voor%20Elkaar">Mail je aanvraag</a>
+            <a class="btn" href="aanvraag.html">Naar het aanvraagformulier</a>
             <p class="small">Of mail naar <a href="mailto:{MAIL}">{MAIL}</a>. Vragen vooraf mogen ook. Je kunt ook het aanvraagformulier op de site van <a href="https://ondernemersfondsdordrecht.nl/">ONS Dordrecht</a> gebruiken; kies dan trekkingsgebied 15, Het Reeland.</p>
           </div>
         </div>''', id_='indienen', label='h-indienen')
@@ -236,7 +241,11 @@ over = f'''    <section class="pagehead" aria-labelledby="kop">
       </div>
     </section>
 
-''' + lane('r', 'groen', 'baksteen', '''        <h2 id="h-bestuur">Bestuur</h2>
+''' + lane('r', 'groen', 'baksteen', '''        <figure class="photo">
+          <img src="assets/foto-oprichting.jpg" alt="De oprichters van de stichting aan tafel bij de notaris" width="640" height="480" loading="lazy">
+          <figcaption>Oprichting van de stichting bij Notariaat Nonhebel in Dordrecht, 25 september 2025. Foto: Peter ter Hark.</figcaption>
+        </figure>
+        <h2 id="h-bestuur" class="mt">Bestuur</h2>
         <p class="intro">Drie ondernemers uit het Reeland. Ze zitten in het bestuur op persoonlijke titel, niet namens hun eigen bedrijf. We zoeken nog versterking: ben jij ondernemer in het Reeland en wil je meedenken? Laat het ons weten.</p>
         <!-- [BESTUUR] per persoon foto, twee zinnen en eigen contactgegevens (voorstel Jolita) -->
         <ul class="board">
@@ -258,11 +267,12 @@ privacy = f'''    <section class="pagehead" aria-labelledby="kop">
       <div class="kopband" aria-hidden="true"></div>
       <div class="wrap">
         <h1 id="kop">Privacy</h1>
-        <p class="lead">Deze website verzamelt zo weinig mogelijk. Er zijn geen formulieren, geen trackingcookies en geen statistieken.</p>
+        <p class="lead">Deze website verzamelt zo weinig mogelijk. Er zijn geen trackingcookies en geen statistieken, en het aanvraagformulier stuurt niets naar ons of naar anderen.</p>
       </div>
     </section>
 
 ''' + lane('r', 'groen', 'baksteen', f'''        <h2 id="h-mail">Als je ons mailt</h2>
+        <p>Het aanvraagformulier op deze site verstuurt zelf niets. Het maakt een mail aan in je eigen mailprogramma, die je zelf verstuurt. Tot je de pagina sluit, bewaart je browser je antwoorden tijdelijk, alleen op je eigen apparaat.</p>
         <p>Stuur je een aanvraag of vraag per mail, dan gebruiken we je gegevens alleen om je aanvraag te behandelen en contact met je te houden. Voor de verantwoording aan het Ondernemersfonds Dordrecht delen we van toegekende aanvragen de naam van de aanvrager, het bedrag en de datum. Andere gegevens delen we niet.</p>
         <p>We bewaren aanvragen zo lang als nodig is voor onze administratie en de verantwoording, en niet langer dan wettelijk verplicht.</p>
         <h2 id="h-site" class="mt">Deze website</h2>
@@ -279,10 +289,92 @@ notfound = '''    <section class="pagehead" aria-labelledby="kop">
     </section>
 '''
 
+
+# ---------- Aanvraagformulier ----------
+# Zelfde vragen als het aanvraagformulier van ONS Dordrecht. Geen server: het formulier
+# maakt een mail aan voorzitter@ (of je kopieert de tekst); bijlagen voeg je in je mail toe.
+def veld(id_, label, kind='text', req=True, hint='', extra=''):
+    r = ' required' if req else ''
+    h = f'<small>{hint}</small>' if hint else ''
+    if kind == 'textarea':
+        inp = f'<textarea id="{id_}" name="{id_}" rows="5"{r}{extra}></textarea>'
+    else:
+        inp = f'<input id="{id_}" name="{id_}" type="{kind}"{r}{extra}>'
+    return f'<div class="field"><label for="{id_}">{label}{"" if req else " <span>(optioneel)</span>"}</label>{h}{inp}</div>'
+
+def keuze(id_, label, opties, req=True):
+    r = ' required' if req else ''
+    knoppen = ''.join(f'<label class="opt"><input type="radio" name="{id_}" value="{o}"{r}> {o}</label>' for o in opties)
+    return f'<fieldset class="field"><legend>{label}</legend><div class="opts">{knoppen}</div></fieldset>'
+
+aanvraag = f'''    <section class="pagehead" aria-labelledby="kop">
+      <div class="kopband" aria-hidden="true"></div>
+      <div class="wrap">
+        <h1 id="kop">Aanvraagformulier</h1>
+        <p class="lead">Vul de vragen in. Met de knop onderaan maak je een mail aan het bestuur, met al je antwoorden erin. Voeg in die mail je projectplan, begroting en andere stukken toe als bijlage, en verstuur hem.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-form">
+      <div class="wrap">
+        <h2 id="h-form" class="sr">Formulier</h2>
+        <form class="aanvraag" id="aanvraagformulier" novalidate>
+          <fieldset class="group"><legend>Over jou</legend>
+            {veld('organisatie', 'Naam van je organisatie of bedrijf')}
+            {veld('adres', 'Adres van de vestiging in het Reeland')}
+            {keuze('eigendom', 'Ben je eigenaar of huurder van dit adres?', ['Eigenaar', 'Huurder'])}
+            {veld('naam', 'Voornaam en achternaam', extra=' autocomplete="name"')}
+            {veld('telefoon', 'Telefoonnummer', 'tel', extra=' autocomplete="tel"')}
+            {veld('email', 'Mailadres', 'email', extra=' autocomplete="email"')}
+          </fieldset>
+          <fieldset class="group"><legend>Over je plan</legend>
+            {veld('titel', 'Naam van je initiatief')}
+            {veld('beschrijving', 'Korte beschrijving van het initiatief', 'textarea', hint='Wat ga je doen, waar en voor wie?')}
+            {veld('ontstaan', 'Hoe zijn het idee en de besluitvorming tot stand gekomen?', 'textarea')}
+            {keuze('draagvlak', 'Wordt het plan breed en aantoonbaar gesteund door meerdere ondernemingen of organisaties in het Reeland?', ['Ja', 'Nee'])}
+            {veld('steun', 'Welke ondernemingen of organisaties steunen het plan?', 'textarea', req=False, hint='Naam en contactpersoon. Een lijst kun je ook als bijlage meesturen.')}
+            {keuze('eerder', 'Heb je dit plan al eerder aangevraagd bij een ander trekkingsgebied?', ['Nee', 'Ja'])}
+            {veld('start', 'Startdatum', 'date')}
+            {veld('looptijd', 'Looptijd', hint='Bijvoorbeeld: 1 dag, 3 maanden')}
+          </fieldset>
+          <fieldset class="group"><legend>Geld</legend>
+            {veld('begroot', 'Totaal begroot bedrag (euro)', 'number', extra=' min="0" step="1" inputmode="numeric"')}
+            {veld('gevraagd', 'Bedrag dat je aanvraagt (euro)', 'number', extra=' min="0" step="1" inputmode="numeric"')}
+            {keuze('cofinanciering', 'Zijn er ook andere bijdragen of sponsors?', ['Nee', 'Ja'])}
+            {veld('cofinanciers', 'Zo ja: welke organisaties en welke bedragen?', 'textarea', req=False)}
+            {veld('iban', 'Bankrekeningnummer (IBAN) voor de uitbetaling', extra=' autocomplete="off" spellcheck="false"')}
+          </fieldset>
+          <fieldset class="group"><legend>Bijlagen</legend>
+            <p>Deze stuur je mee als bijlage in de mail die het formulier aanmaakt:</p>
+            <ul class="check">
+              <li>Projectplan of projectomschrijving</li>
+              <li>Begroting</li>
+              <li>Lijst met ondernemers en organisaties die het plan steunen</li>
+              <li>Communicatieplan: hoe maak je het bekend?</li>
+            </ul>
+          </fieldset>
+          <fieldset class="group"><legend>Tot slot</legend>
+            {veld('opmerking', 'Eventuele opmerking', 'textarea', req=False)}
+            <label class="opt"><input type="checkbox" name="waarheid" required> Alle gegevens zijn naar waarheid ingevuld.</label>
+            <label class="opt"><input type="checkbox" name="privacy" required> Ik ga akkoord met de <a href="privacy.html">privacyverklaring</a>.</label>
+          </fieldset>
+          <p class="fout" role="alert" hidden></p>
+          <div class="actions">
+            <button class="btn" type="submit">Maak de mail aan</button>
+            <button class="btn btn--licht" type="button" data-kopieer>Kopieer de tekst</button>
+          </div>
+          <p class="small" data-status role="status"></p>
+          <p class="small">Opent er geen mailprogramma? Kopieer dan de tekst en plak hem in een mail aan <a href="mailto:{MAIL}">{MAIL}</a>. Je antwoorden blijven alleen in deze browser bewaard tot je de pagina sluit.</p>
+        </form>
+      </div>
+    </section>
+'''
+
 pages = [
   ('index.html', 'Stichting Reeland voor Elkaar | Geld uit het Reeland, voor het Reeland', 'Ondernemers, scholen en verenigingen in het Reeland in Dordrecht betalen mee aan het Ondernemersfonds. Bij Stichting Reeland voor Elkaar vraag je dat geld aan voor de wijk.', 'home', 5, home),
   ('gebied.html', 'Het gebied | Stichting Reeland voor Elkaar', 'De vijf buurten van trekkingsgebied 15 Reeland: Wantijbuurt, Transvaalbuurt, Vogelbuurt, Indische Buurt en Land van Valk.', 'gebied', 2, gebied),
   ('aanvragen.html', 'Aanvraag indienen | Stichting Reeland voor Elkaar', 'Zo dien je een aanvraag in bij Stichting Reeland voor Elkaar: wat erin moet, vergaderdata en indientermijn.', 'aanvragen', 1, aanvragen),
+  ('aanvraag.html', 'Aanvraagformulier | Stichting Reeland voor Elkaar', 'Doe een aanvraag bij Stichting Reeland voor Elkaar, trekkingsgebied 15 van ONS Dordrecht.', 'aanvragen', 1, aanvraag),
   ('privacy.html', 'Privacy | Stichting Reeland voor Elkaar', 'Hoe Stichting Reeland voor Elkaar omgaat met gegevens.', 'over', 4, privacy),
   ('404.html', 'Pagina niet gevonden | Stichting Reeland voor Elkaar', 'Deze pagina bestaat niet.', 'home', 5, notfound),
   ('over-ons.html', 'Over ons | Stichting Reeland voor Elkaar', 'Bestuur, doel en contactgegevens van Stichting Reeland voor Elkaar, trekkingsgebied 15 van ONS Dordrecht.', 'over', 4, over),

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aanvraagformulier | Stichting Reeland voor Elkaar</title>
+  <meta name="description" content="Doe een aanvraag bij Stichting Reeland voor Elkaar, trekkingsgebied 15 van ONS Dordrecht.">
+  <meta property="og:title" content="Aanvraagformulier | Stichting Reeland voor Elkaar">
+  <meta property="og:description" content="Doe een aanvraag bij Stichting Reeland voor Elkaar, trekkingsgebied 15 van ONS Dordrecht.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:image" content="https://reelandvoorelkaar.nl/assets/deelafbeelding.png">
+  <meta property="og:url" content="https://reelandvoorelkaar.nl/aanvraag.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/style.css?v=202610140659">
+  <script src="assets/gate.js?v=202610140659"></script>
+</head>
+<body data-pair="aanvragen">
+  <a class="skip" href="#inhoud">Naar de inhoud</a>
+
+  <header class="top">
+    <div class="wrap top__bar">
+      <a class="logo" href="index.html"><img src="assets/logo/logo-1.svg" alt="Stichting Reeland voor Elkaar" width="249" height="94"></a>
+      <nav class="nav" aria-label="Hoofdmenu">
+        <a href="gebied.html">Het gebied</a><a href="aanvragen.html">Aanvragen</a><a href="over-ons.html">Over ons</a>
+        <a class="btn" href="aanvraag.html">Aanvraag indienen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhoud">
+    <section class="pagehead" aria-labelledby="kop">
+      <div class="kopband" aria-hidden="true"></div>
+      <div class="wrap">
+        <h1 id="kop">Aanvraagformulier</h1>
+        <p class="lead">Vul de vragen in. Met de knop onderaan maak je een mail aan het bestuur, met al je antwoorden erin. Voeg in die mail je projectplan, begroting en andere stukken toe als bijlage, en verstuur hem.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-form">
+      <div class="wrap">
+        <h2 id="h-form" class="sr">Formulier</h2>
+        <form class="aanvraag" id="aanvraagformulier" novalidate>
+          <fieldset class="group"><legend>Over jou</legend>
+            <div class="field"><label for="organisatie">Naam van je organisatie of bedrijf</label><input id="organisatie" name="organisatie" type="text" required></div>
+            <div class="field"><label for="adres">Adres van de vestiging in het Reeland</label><input id="adres" name="adres" type="text" required></div>
+            <fieldset class="field"><legend>Ben je eigenaar of huurder van dit adres?</legend><div class="opts"><label class="opt"><input type="radio" name="eigendom" value="Eigenaar" required> Eigenaar</label><label class="opt"><input type="radio" name="eigendom" value="Huurder" required> Huurder</label></div></fieldset>
+            <div class="field"><label for="naam">Voornaam en achternaam</label><input id="naam" name="naam" type="text" required autocomplete="name"></div>
+            <div class="field"><label for="telefoon">Telefoonnummer</label><input id="telefoon" name="telefoon" type="tel" required autocomplete="tel"></div>
+            <div class="field"><label for="email">Mailadres</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          </fieldset>
+          <fieldset class="group"><legend>Over je plan</legend>
+            <div class="field"><label for="titel">Naam van je initiatief</label><input id="titel" name="titel" type="text" required></div>
+            <div class="field"><label for="beschrijving">Korte beschrijving van het initiatief</label><small>Wat ga je doen, waar en voor wie?</small><textarea id="beschrijving" name="beschrijving" rows="5" required></textarea></div>
+            <div class="field"><label for="ontstaan">Hoe zijn het idee en de besluitvorming tot stand gekomen?</label><textarea id="ontstaan" name="ontstaan" rows="5" required></textarea></div>
+            <fieldset class="field"><legend>Wordt het plan breed en aantoonbaar gesteund door meerdere ondernemingen of organisaties in het Reeland?</legend><div class="opts"><label class="opt"><input type="radio" name="draagvlak" value="Ja" required> Ja</label><label class="opt"><input type="radio" name="draagvlak" value="Nee" required> Nee</label></div></fieldset>
+            <div class="field"><label for="steun">Welke ondernemingen of organisaties steunen het plan? <span>(optioneel)</span></label><small>Naam en contactpersoon. Een lijst kun je ook als bijlage meesturen.</small><textarea id="steun" name="steun" rows="5"></textarea></div>
+            <fieldset class="field"><legend>Heb je dit plan al eerder aangevraagd bij een ander trekkingsgebied?</legend><div class="opts"><label class="opt"><input type="radio" name="eerder" value="Nee" required> Nee</label><label class="opt"><input type="radio" name="eerder" value="Ja" required> Ja</label></div></fieldset>
+            <div class="field"><label for="start">Startdatum</label><input id="start" name="start" type="date" required></div>
+            <div class="field"><label for="looptijd">Looptijd</label><small>Bijvoorbeeld: 1 dag, 3 maanden</small><input id="looptijd" name="looptijd" type="text" required></div>
+          </fieldset>
+          <fieldset class="group"><legend>Geld</legend>
+            <div class="field"><label for="begroot">Totaal begroot bedrag (euro)</label><input id="begroot" name="begroot" type="number" required min="0" step="1" inputmode="numeric"></div>
+            <div class="field"><label for="gevraagd">Bedrag dat je aanvraagt (euro)</label><input id="gevraagd" name="gevraagd" type="number" required min="0" step="1" inputmode="numeric"></div>
+            <fieldset class="field"><legend>Zijn er ook andere bijdragen of sponsors?</legend><div class="opts"><label class="opt"><input type="radio" name="cofinanciering" value="Nee" required> Nee</label><label class="opt"><input type="radio" name="cofinanciering" value="Ja" required> Ja</label></div></fieldset>
+            <div class="field"><label for="cofinanciers">Zo ja: welke organisaties en welke bedragen? <span>(optioneel)</span></label><textarea id="cofinanciers" name="cofinanciers" rows="5"></textarea></div>
+            <div class="field"><label for="iban">Bankrekeningnummer (IBAN) voor de uitbetaling</label><input id="iban" name="iban" type="text" required autocomplete="off" spellcheck="false"></div>
+          </fieldset>
+          <fieldset class="group"><legend>Bijlagen</legend>
+            <p>Deze stuur je mee als bijlage in de mail die het formulier aanmaakt:</p>
+            <ul class="check">
+              <li>Projectplan of projectomschrijving</li>
+              <li>Begroting</li>
+              <li>Lijst met ondernemers en organisaties die het plan steunen</li>
+              <li>Communicatieplan: hoe maak je het bekend?</li>
+            </ul>
+          </fieldset>
+          <fieldset class="group"><legend>Tot slot</legend>
+            <div class="field"><label for="opmerking">Eventuele opmerking <span>(optioneel)</span></label><textarea id="opmerking" name="opmerking" rows="5"></textarea></div>
+            <label class="opt"><input type="checkbox" name="waarheid" required> Alle gegevens zijn naar waarheid ingevuld.</label>
+            <label class="opt"><input type="checkbox" name="privacy" required> Ik ga akkoord met de <a href="privacy.html">privacyverklaring</a>.</label>
+          </fieldset>
+          <p class="fout" role="alert" hidden></p>
+          <div class="actions">
+            <button class="btn" type="submit">Maak de mail aan</button>
+            <button class="btn btn--licht" type="button" data-kopieer>Kopieer de tekst</button>
+          </div>
+          <p class="small" data-status role="status"></p>
+          <p class="small">Opent er geen mailprogramma? Kopieer dan de tekst en plak hem in een mail aan <a href="mailto:voorzitter@reelandvoorelkaar.nl">voorzitter@reelandvoorelkaar.nl</a>. Je antwoorden blijven alleen in deze browser bewaard tot je de pagina sluit.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <img src="assets/logo/logo-1.svg" alt="Stichting Reeland voor Elkaar" width="249" height="94">
+        <p>Trekkingsgebied 15 van <a href="https://www.ondernemersfondsdordrecht.nl/">ONS Dordrecht</a>, het Ondernemersfonds Dordrecht.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p><a href="mailto:voorzitter@reelandvoorelkaar.nl">voorzitter@reelandvoorelkaar.nl</a></p>
+        <p>KvK 98417975</p>
+      </div>
+      <div>
+        <h2>Pagina's</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gebied.html">Het gebied</a></li><li><a href="aanvragen.html">Aanvragen</a></li><li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/data.js?v=202610140659"></script>
+  <script src="assets/aanvraag.js?v=202610140659" defer></script>
+  <script src="assets/script.js?v=202610140659" defer></script>
+</body>
+</html>
