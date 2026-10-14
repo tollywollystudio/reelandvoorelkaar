@@ -250,8 +250,10 @@ img, svg { max-width: 100%; }
 
 /* Kleur per thema, zoals Leen voorstelt: elk thema een kleurpaar uit de logovarianten,
    als klein slingertje (bovenste helft --t1, onderste --t2). */
-.list.tiles li { position: relative; padding-left: 3.4rem; }
-.list.tiles .mini { position: absolute; left: 0; top: 1.15rem; width: 2.5rem; height: auto; }
+.list.tiles li { position: relative; padding-top: 1.1rem; }
+.list.tiles .mini { position: absolute; left: 0; top: calc(1.1rem + 3.5px); width: 85px; height: 47px; }
+.list.tiles h3 { margin: 0; padding-left: 95px; font-size: 1.1rem; line-height: 27px; }
+.list.tiles p { padding-left: 60px; line-height: 27px; }
 /* Opeenvolgende kleuren uit de grote slinger */
 .list.tiles li:nth-child(7n+1) { --t1: var(--lichtblauw); --t2: var(--baksteen); --t3: var(--groen); }
 .list.tiles li:nth-child(7n+2) { --t1: var(--baksteen); --t2: var(--groen); --t3: var(--oranje); }
