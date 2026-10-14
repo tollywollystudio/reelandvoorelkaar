@@ -252,13 +252,14 @@ img, svg { max-width: 100%; }
    als klein slingertje (bovenste helft --t1, onderste --t2). */
 .list.tiles li { position: relative; padding-left: 3.4rem; }
 .list.tiles .mini { position: absolute; left: 0; top: 1.15rem; width: 2.5rem; height: auto; }
-.list.tiles li:nth-child(7n+1) { --t1: var(--baksteen); --t2: var(--lichtblauw); }
-.list.tiles li:nth-child(7n+2) { --t1: var(--oranje); --t2: var(--groen); }
-.list.tiles li:nth-child(7n+3) { --t1: var(--mint); --t2: var(--oker); }
-.list.tiles li:nth-child(7n+4) { --t1: var(--groen); --t2: var(--baksteen); }
-.list.tiles li:nth-child(7n+5) { --t1: var(--blauw); --t2: var(--roze); }
-.list.tiles li:nth-child(7n+6) { --t1: var(--lichtblauw); --t2: var(--baksteen); }
-.list.tiles li:nth-child(7n+7) { --t1: var(--oker); --t2: var(--mint); }
+/* Opeenvolgende kleuren uit de grote slinger */
+.list.tiles li:nth-child(7n+1) { --t1: var(--lichtblauw); --t2: var(--baksteen); --t3: var(--groen); }
+.list.tiles li:nth-child(7n+2) { --t1: var(--baksteen); --t2: var(--groen); --t3: var(--oranje); }
+.list.tiles li:nth-child(7n+3) { --t1: var(--groen); --t2: var(--oranje); --t3: var(--mint); }
+.list.tiles li:nth-child(7n+4) { --t1: var(--oranje); --t2: var(--mint); --t3: var(--oker); }
+.list.tiles li:nth-child(7n+5) { --t1: var(--mint); --t2: var(--oker); --t3: var(--blauw); }
+.list.tiles li:nth-child(7n+6) { --t1: var(--oker); --t2: var(--blauw); --t3: var(--roze); }
+.list.tiles li:nth-child(7n+7) { --t1: var(--blauw); --t2: var(--roze); --t3: var(--lichtblauw); }
 @media (min-width: 48em) { .hero__grid { grid-template-columns: 1fr 18rem; } }
 
 /* Aanvraagformulier */
