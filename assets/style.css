@@ -388,9 +388,3 @@ body[data-pair="over"] { --btn2: var(--groen); }
 .formhulp .check li { font-size: .95rem; border-bottom: 0; padding-top: .25rem; padding-bottom: .25rem; }
 .formhulp .check li::before { top: .55rem; }
 @media (max-width: 59.99em) { .formhulp { order: -1; } }
-/* Als in het logo achter 'elkaar': de laatste regel loopt door in een band tot de rand. */
-.list.tiles p { overflow: hidden; }
-.list.tiles p::after {
-  content: ""; display: inline-block; width: 100%; margin-right: calc(-100% + 2.5rem); margin-left: .5em;
-  height: 20px; vertical-align: -5px; background: var(--t1);
-}
