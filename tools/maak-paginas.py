@@ -173,17 +173,17 @@ gebied = '''    <section class="pagehead" aria-labelledby="kop">
 
 ''' + lane('r', 'oranje', 'groen', '''        <h2 id="h-buurten">Vijf buurten</h2>
         <p class="intro">Heb je een pand in een van deze buurten dat geen woning is? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>
-        <ul class="list list--3">
+        <ul class="list list--3 tiles">
           <li><h3>Wantijbuurt</h3><p>Het groene noorden aan het Wantij, gebouwd in de jaren dertig. Ruim opgezet, met villa's, het Wantijpark en Villa Augustus.</p></li>
           <li><h3>Transvaalbuurt</h3><p>De oudste buurt, gebouwd rond 1900 tegen de negentiende-eeuwse stadsrand aan. Een compacte stadsbuurt met winkels en bedrijven rond de Transvaalstraat.</p></li>
           <li><h3>Vogelbuurt</h3><p>Gebouwd in de jaren vijftig, na de oorlog. Met het Vogelplein als hart: supermarkt, cafetaria en buurtwerk vanuit Het Vogelnest.</p></li>
           <li><h3>Indische Buurt</h3><p>Het hart van het Reeland, gebouwd tussen 1910 en 1940 op voormalige tuinderijen. Langs de Reeweg Oost zitten bakker, slager, groenteboer en andere winkels.</p></li>
           <li><h3>Land van Valk</h3><p>Vooroorlogse woonbuurt met zorgvuldig metselwerk, aangevuld met de nieuwere bouw van Nieuw Land van Valk.</p></li>
         </ul>''', label='h-buurten') + lane('r', 'groen', 'oranje', '''        <h2 id="h-naam">Waar de naam vandaan komt</h2>
-        <p class="intro">Een ree is een rechte grenslijn. In 1560 trokken landmeters zo'n lijn tussen de stad Dordrecht en de toenmalige heerlijkheid Dubbeldam. De Reeweg volgt die oude grens nog steeds. Het gebied werd later bij Dordrecht gevoegd en buurt voor buurt bebouwd: van de Transvaalbuurt rond 1900 tot Plan Tij in 2004.</p>''', label='h-naam') + lane('l', 'groen', 'baksteen', '''        <h2 id="h-kaart">Grenzen van het gebied</h2>
+        <p class="intro">Een ree is een rechte grenslijn. In 1560 trokken landmeters zo'n lijn tussen de stad Dordrecht en de toenmalige heerlijkheid Dubbeldam. De Reeweg volgt die oude grens nog steeds. Het gebied werd later bij Dordrecht gevoegd en buurt voor buurt bebouwd: van de Transvaalbuurt rond 1900 tot Plan Tij in 2004.</p>''', label='h-naam') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
+        <h3 class="mt">Grenzen en straten</h3>
         <!-- [KAART] zodra de kaart van ONS er is: <figure class="map"> met assets/kaart.svg terugzetten -->
-        <p class="intro">De precieze grenzen van het trekkingsgebied zijn vastgelegd door het Ondernemersfonds Dordrecht. Een kaart met alle straten volgt. Twijfel je of je pand erbij hoort? Gebruik de straatzoeker hieronder of mail ons.</p>''', label='h-kaart') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
-        <h3 class="mt">Alle straten</h3>
+        <p>De precieze grenzen van het trekkingsgebied zijn vastgelegd door het Ondernemersfonds Dordrecht. Een kaart en de volledige stratenlijst volgen. Twijfel je of je pand erbij hoort? Mail ons.</p>
         <ul class="streets" data-stratenlijst></ul>''', id_='hoor-ik-erbij', label='h-check')
 
 # ---------- Aanvragen ----------
