@@ -40,11 +40,10 @@ KOL = 150                              # lengte van de rechte stukken
 lx0 = B; lx1 = lx0 + KOL
 rx0 = lx1 + 2 * B + M; rx1 = rx0 + KOL
 W = rx1 + B
-# rechterkolom: rij 0..7, eerste bocht rechts; linkerkolom: rij 1..6, eerste bocht links (spiegel)
+# twee gelijke kolommen van 8 banen, gespiegeld: links begint met een bocht links,
+# rechts met een bocht rechts. Open uiteinden aan de buitenkant, alles op één lijn.
+links = kolom(lx0, lx1, [(k, C[k]) for k in range(8)], 'l')
 rechts = kolom(rx0, rx1, [(k, C[k]) for k in range(8)], 'r')
-links = kolom(lx0 - 0, lx1, [(k, C[k]) for k in range(1, 7)], 'l')
-# open uiteinden: rechterkolom begint links bij het midden, eindigt aan de rechterkant;
-# linkerkolom begint en eindigt bij het midden.
 H = 20 + 7 * P + SW / 2
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H:.0f}" fill="none" stroke-width="{SW}" aria-hidden="true">']
 svg += ['  ' + p for p in links + rechts]
