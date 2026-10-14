@@ -87,7 +87,8 @@ def lane(side, c1, c2, inner, id_=None, label=None):
     </section>
 '''
 
-checker = '''        <div class="panel">
+checker = '''        <div class="panel panel--slinger">
+          <span class="flow__label">Check je straat</span>
           <div>
             <h2 id="h-check">Hoor ik erbij?</h2>
             <p>Heb je een onderneming, school, vereniging of organisatie met een pand in het Reeland? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>

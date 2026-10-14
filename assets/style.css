@@ -369,3 +369,30 @@ body[data-pair="over"] { --btn2: var(--groen); }
 .cijfers li:nth-child(3) strong { color: var(--blauw); }
 .cijfers span { font-size: .95rem; color: var(--ink-soft); max-width: 14rem; }
 @media (max-width: 30em) { .cijfers { gap: .75rem; } .cijfers span { font-size: .82rem; } }
+
+/* "Hoor ik erbij?" in slingervorm: omlijst door een band met een volle bocht rechts,
+   bovenste helft --p1, onderste helft --p2, zoals de bochten in het logo. */
+.panel--slinger {
+  --b: 26px; --r: 6rem; --t: #fff;
+  position: relative; background: none; border-radius: 0;
+  padding: calc(var(--b) + 2rem) calc(var(--r) + 1rem) calc(var(--b) + 2rem) 0;
+  min-height: calc(2 * var(--r));
+}
+.panel--slinger::before, .panel--slinger::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 50%; border: 0 solid; pointer-events: none;
+  border-right-width: var(--b);
+}
+.panel--slinger::before { top: 0; border-top-width: var(--b); border-color: var(--p1); border-top-right-radius: var(--r); }
+.panel--slinger::after { bottom: 0; border-bottom-width: var(--b); border-color: var(--p2); border-bottom-right-radius: var(--r); }
+.panel--slinger .flow__label { left: 1rem; color: #fff; }
+body[data-pair="home"] .panel--slinger .flow__label,
+body:not([data-pair]) .panel--slinger .flow__label { color: #fff; }
+@media (min-width: 48em) { .panel--slinger { padding-left: 0; } }
+@media (max-width: 30em) { .panel--slinger { --b: 20px; --r: 3rem; padding-right: calc(var(--r) + .25rem); } }
+
+/* Invoerveld en knop als één band: recht begin, ronde tweekleurige kop */
+.streetform { gap: 0; flex-wrap: nowrap; align-items: stretch; }
+.streetform label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.streetform input { border-radius: 0; border: 2px solid var(--baksteen); border-right: 0; height: 2.9rem; }
+.streetform .btn { flex: none; }
+.panel--slinger h2 { margin-bottom: .4rem; }
