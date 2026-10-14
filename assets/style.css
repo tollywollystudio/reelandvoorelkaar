@@ -362,7 +362,7 @@ body[data-pair="over"] { --btn2: var(--groen); }
 .faq details p { margin: 0 0 1.1rem; color: var(--ink-soft); max-width: 40rem; }
 
 /* Kerncijfers onder de kop van de homepage */
-.cijfers { list-style: none; padding: 0; margin: 3rem 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding-top: 1.75rem; }
+.cijfers { list-style: none; padding: 0; margin: 3rem 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(3, 1fr); }
 .cijfers li { display: flex; flex-direction: column; gap: .2rem; }
 .cijfers strong { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1; font-weight: 700; letter-spacing: -.02em; }
 .cijfers li:nth-child(1) strong { color: var(--baksteen); }
