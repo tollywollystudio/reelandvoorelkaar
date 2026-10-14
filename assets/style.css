@@ -299,3 +299,43 @@ img, svg { max-width: 100%; }
 .tijdlijn time { display: block; font-size: .9rem; color: var(--ink-soft); }
 .tijdlijn h3 { margin: .15rem 0 .25rem; }
 .tijdlijn p { margin: 0; color: var(--ink-soft); }
+
+/* Knoppen als band uit het logo: rechte kant links, ronde kop rechts. De kop is precies een
+   halve cirkel; de onderste helft heeft de tweede kleur, zoals het einde van een band in het logo. */
+body { --btn2: var(--roze); }
+body[data-pair="gebied"] { --btn2: var(--groen); }
+body[data-pair="aanvragen"] { --btn2: var(--lichtblauw); }
+body[data-pair="over"] { --btn2: var(--groen); }
+.btn {
+  --h: 2.9rem;
+  display: inline-flex; align-items: center;
+  height: var(--h); padding: 0 calc(var(--h) / 2 + .6rem) 0 1.15rem;
+  border-radius: 0 999px 999px 0;
+  background:
+    linear-gradient(to bottom, transparent 50%, var(--btn2) 50%) right / calc(var(--h) / 2) 100% no-repeat,
+    var(--baksteen);
+  white-space: nowrap;
+}
+.nav .btn { --h: 2.3rem; padding: 0 calc(var(--h) / 2 + .5rem) 0 .9rem; }
+.btn--licht {
+  color: var(--baksteen);
+  background:
+    linear-gradient(to bottom, transparent 50%, var(--btn2) 50%) right / calc(var(--h) / 2) 100% no-repeat,
+    #fff;
+  box-shadow: inset 0 0 0 2px var(--baksteen);
+}
+@media (max-width: 30em) { .btn { white-space: normal; height: auto; min-height: var(--h); padding-top: .5rem; padding-bottom: .5rem; } }
+
+/* Stappen-slinger dichter bij het logo: volle halve-cirkelbochten, dikkere band, volle breedte */
+.flow { --b: 30px; --r: 4.75rem; max-width: none; }
+.flow li { min-height: calc(2 * var(--r)); padding-right: calc(var(--r) + 1.5rem); }
+.flow li:nth-child(even) { padding-left: calc(var(--r) + 1.5rem); padding-right: 0; }
+.flow li:last-child { min-height: 0; padding-right: 0; }
+.flow h3, .flow p { max-width: 42rem; }
+.flow h3 { font-size: 1.3rem; }
+.flow__label { font-size: .8rem; }
+@media (max-width: 30em) {
+  .flow { --b: 22px; --r: 3rem; }
+  .flow li { padding-right: calc(var(--r) + .5rem); }
+  .flow li:nth-child(even) { padding-left: calc(var(--r) + .5rem); padding-right: 0; }
+}
