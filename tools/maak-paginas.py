@@ -116,6 +116,13 @@ home = f'''    <section class="hero" aria-labelledby="kop">
         </div>
         {slinger}
       </div>
+      <div class="wrap">
+        <ul class="cijfers" aria-label="Het Reeland in cijfers">
+          <li><strong>175</strong><span>ondernemers en organisaties</span></li>
+          <li><strong>5</strong><span>buurten</span></li>
+          <li><strong>15</strong><span>trekkingsgebied, van de 24 in Dordrecht</span></li>
+        </ul>
+      </div>
     </section>
 
 ''' + lane('r', 'baksteen', 'groen', '''        <h2 id="h-werkt">Een fonds van en voor het Reeland</h2>
@@ -136,6 +143,7 @@ home = f'''    <section class="hero" aria-labelledby="kop">
           <li><h3>Overleg en vertegenwoordiging</h3><p>Een stem voor het gebied in relevante overleggen.</p></li>
           <li><h3>Onderzoek en data</h3><p>Weten wat er speelt, zodat plannen beter aansluiten.</p></li>
         </ul>
+        <p class="small mt-s">Het Ondernemersfonds Dordrecht noemt zelf voorbeelden als feestverlichting, camerabeveiliging en onderzoek, of projecten rond verbinding, duurzaamheid en gezondheid. Of je nu een school, stichting, vereniging of bedrijf bent.</p>
         <div class="deadline">
           <div><small>Eerstvolgende indiendatum</small><strong data-next="indienen">&nbsp;</strong></div>
           <div><small>Besproken in de vergadering van</small><strong data-next="vergadering">&nbsp;</strong></div>
@@ -224,6 +232,7 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
           <details><summary>Moet ik lid worden of me aanmelden?</summary><p>Nee. Heb je een pand in het Reeland dat geen woning is, dan betaal je al mee via de OZB en kun je een aanvraag doen. Je hoeft nergens lid van te worden.</p></details>
           <details><summary>Ik huur mijn pand. Kan ik dan ook aanvragen?</summary><p>Ja. De opslag wordt betaald door eigenaren én gebruikers van panden die geen woning zijn. Huurders horen er dus ook bij.</p></details>
           <details><summary>Kan ik in mijn eentje een aanvraag doen?</summary><p>Het geld is bedoeld voor plannen die meerdere ondernemers of organisaties in het gebied ten goede komen. Een plan voor alleen je eigen bedrijf komt niet in aanmerking. Laat in je aanvraag zien wie er nog meer achter je plan staan.</p></details>
+          <details><summary>Kan ik ook aanvragen via de site van ONS Dordrecht?</summary><p>Ja. Kies in het formulier van ONS trekkingsgebied 15, Het Reeland. Omdat het Reeland een eigen stichting heeft, stuurt ONS je aanvraag door naar ons bestuur. Rechtstreeks via ons formulier is iets sneller.</p></details>
           <details><summary>Wie beslist over mijn aanvraag?</summary><p>Het bestuur van de stichting, in een vergadering, bij meerderheid van stemmen. Heeft een bestuurslid zelf belang bij een aanvraag, dan praat en stemt die niet mee.</p></details>
           <details><summary>Hoeveel geld kan ik aanvragen?</summary><p>Dat hangt af van je plan en van wat er voor het Reeland beschikbaar is. Er is geen vast bedrag. Neem gerust vooraf contact op, dan denken we mee over een realistische begroting.</p></details>
           <details><summary>Wat gebeurt er met geld dat niet wordt gebruikt?</summary><p>Dat blijft gereserveerd voor het Reeland bij het Ondernemersfonds Dordrecht. Het gaat niet naar een andere wijk.</p></details>
