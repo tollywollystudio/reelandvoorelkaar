@@ -340,6 +340,7 @@ aanvraag = f'''    <section class="pagehead" aria-labelledby="kop">
     <section class="block" aria-labelledby="h-form">
       <div class="wrap">
         <h2 id="h-form" class="sr">Formulier</h2>
+        <div class="formgrid">
         <form class="aanvraag" id="aanvraagformulier" novalidate>
           <fieldset class="group"><legend>Over jou</legend>
             {veld('organisatie', 'Naam van je organisatie of bedrijf')}
@@ -388,6 +389,19 @@ aanvraag = f'''    <section class="pagehead" aria-labelledby="kop">
           <p class="small" data-status role="status"></p>
           <p class="small">Opent er geen mailprogramma? Kopieer dan de tekst en plak hem in een mail aan <a href="mailto:{MAIL}">{MAIL}</a>. Je antwoorden blijven alleen in deze browser bewaard tot je de pagina sluit.</p>
         </form>
+        <aside class="formhulp" aria-label="Goed om te weten">
+          <h3>Houd bij de hand</h3>
+          <ul class="check">
+            <li>Projectplan of projectomschrijving</li>
+            <li>Begroting</li>
+            <li>IBAN voor de uitbetaling</li>
+          </ul>
+          <h3>Eerstvolgende ronde</h3>
+          <p>Indienen: <strong data-next="indienen">nader te bepalen</strong><br>Vergadering: <strong data-next="vergadering">nader te bepalen</strong></p>
+          <h3>Vragen?</h3>
+          <p>Mail <a href="mailto:{MAIL}">{MAIL}</a>. Overleggen voordat je indient mag altijd.</p>
+        </aside>
+        </div>
       </div>
     </section>
 '''
