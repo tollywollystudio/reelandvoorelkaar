@@ -251,12 +251,14 @@ img, svg { max-width: 100%; }
 /* Kleur per thema, zoals Leen voorstelt: elk thema een kleurpaar uit de logovarianten,
    als klein slingertje (bovenste helft --t1, onderste --t2). */
 .list.tiles li { position: relative; padding-left: 3.4rem; }
+/* Verhoudingen als in het logo: band 40, tussenruimte 14, buitenstraal 47 (x b/40). */
+.list.tiles li { --b: 10px; }
 .list.tiles li::before, .list.tiles li::after {
-  content: ""; position: absolute; left: 0; width: 2.5rem; height: .8rem;
-  border: 8px solid; border-right: 0;
+  content: ""; position: absolute; left: 0; width: 2.4rem; height: calc(var(--b) * 1.175);
+  border: var(--b) solid; border-right: 0;
 }
-.list.tiles li::before { top: 1.2rem; border-color: var(--t1); border-bottom: 0; border-top-left-radius: .9rem; }
-.list.tiles li::after { top: 2rem; border-color: var(--t2); border-top: 0; border-bottom-left-radius: .9rem; }
+.list.tiles li::before { top: 1.2rem; border-color: var(--t1); border-bottom: 0; border-top-left-radius: calc(var(--b) * 1.175); }
+.list.tiles li::after { top: calc(1.2rem + var(--b) * 1.175); border-color: var(--t2); border-top: 0; border-bottom-left-radius: calc(var(--b) * 1.175); }
 .list.tiles li:nth-child(7n+1) { --t1: var(--baksteen); --t2: var(--lichtblauw); }
 .list.tiles li:nth-child(7n+2) { --t1: var(--oranje); --t2: var(--groen); }
 .list.tiles li:nth-child(7n+3) { --t1: var(--mint); --t2: var(--oker); }
