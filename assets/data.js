@@ -8,7 +8,7 @@ window.REELAND = {
   ],
   // Zet op true zodra de stratenlijst volledig is. Tot die tijd zegt de straatzoeker bij een
   // onbekende straat dat de lijst nog wordt aangevuld, in plaats van "hoort er niet bij".
-  stratenCompleet: false,
+  stratenCompleet: true,
   // [STRATEN] Straten van trekkingsgebied 15 met buurt. Bron: BAG en CBS-buurten 2024 (wijk Reeland),
   // zonder Leerpark, met sportpark Krommedijk. Grensstraten (Oranjelaan, Noordendijk, Toulonselaan,
   // Dubbeldamseweg Zuid, Vrieseweg) staan er helemaal in; buurt = waar de meeste adressen liggen.

@@ -183,7 +183,7 @@ gebied = '''    <section class="pagehead" aria-labelledby="kop">
         <p class="intro">Een ree is een rechte grenslijn. In 1560 trokken landmeters zo'n lijn tussen de stad Dordrecht en de toenmalige heerlijkheid Dubbeldam. De Reeweg volgt die oude grens nog steeds. Het gebied werd later bij Dordrecht gevoegd en buurt voor buurt bebouwd: van de Transvaalbuurt rond 1900 tot Plan Tij in 2004.</p>''', label='h-naam') + lane('r', 'baksteen', 'oker', checker.format(k='gebied') + '''
         <h3 class="mt">Grenzen en straten</h3>
         <!-- [KAART] zodra de kaart van ONS er is: <figure class="map"> met assets/kaart.svg terugzetten -->
-        <p>De precieze grenzen van het trekkingsgebied zijn vastgelegd door het Ondernemersfonds Dordrecht. Een kaart en de volledige stratenlijst volgen. Twijfel je of je pand erbij hoort? Mail ons.</p>
+        <p>Dit zijn de straten van trekkingsgebied 15. Van straten op de grens, zoals de Oranjelaan en de Noordendijk, kan een deel van de huisnummers erbuiten vallen. Twijfel je of je pand erbij hoort? Mail ons.</p>
         <ul class="streets" data-stratenlijst></ul>''', id_='hoor-ik-erbij', label='h-check')
 
 # ---------- Aanvragen ----------

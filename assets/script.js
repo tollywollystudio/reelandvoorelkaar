@@ -56,8 +56,18 @@
       ul.remove();
       return;
     }
-    data.straten.slice().sort(function (a, b) { return a.straat.localeCompare(b.straat, 'nl'); }).forEach(function (s) {
-      var li = document.createElement('li'); li.textContent = s.straat; ul.appendChild(li);
+    // Per buurt, in de volgorde van de pagina
+    var wrap = document.createElement('div'); wrap.className = 'streetgroups';
+    ['Wantijbuurt', 'Transvaalbuurt', 'Vogelbuurt', 'Indische Buurt', 'Land van Valk'].forEach(function (buurt) {
+      var rij = data.straten.filter(function (s) { return s.buurt === buurt; })
+        .sort(function (a, b) { return a.straat.localeCompare(b.straat, 'nl'); });
+      if (!rij.length) return;
+      var g = document.createElement('div');
+      var h = document.createElement('h4'); h.textContent = buurt; g.appendChild(h);
+      var l = document.createElement('ul');
+      rij.forEach(function (s) { var li = document.createElement('li'); li.textContent = s.straat; l.appendChild(li); });
+      g.appendChild(l); wrap.appendChild(g);
     });
+    ul.replaceWith(wrap);
   });
 })();
