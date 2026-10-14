@@ -415,6 +415,18 @@ pages = [
   ('404.html', 'Pagina niet gevonden | Stichting Reeland voor Elkaar', 'Deze pagina bestaat niet.', 'home', 5, notfound),
   ('over-ons.html', 'Over ons | Stichting Reeland voor Elkaar', 'Bestuur, doel en contactgegevens van Stichting Reeland voor Elkaar, trekkingsgebied 15 van ONS Dordrecht.', 'over', 4, over),
 ]
+# Kleine dubbele bocht (S) bij thema's en buurten, verhoudingen als in het logo:
+# band 40, straal hart 27. Kleuren via --t1 en --t2 per lijstitem.
+MINI = ('<svg class="mini" viewBox="0 0 204 148" fill="none" stroke-width="40" aria-hidden="true">'
+        '<path d="M157 20H47A27 27 0 0 0 20 47" stroke="var(--t1)"/>'
+        '<path d="M20 47A27 27 0 0 0 47 74H157A27 27 0 0 1 184 101" stroke="var(--t2)"/>'
+        '<path d="M184 101A27 27 0 0 1 157 128H47" stroke="var(--t1)"/></svg>')
+import re
+def minis(html):
+    return re.sub(r'(<ul class="[^"]*\btiles\b[^"]*">)(.*?)(</ul>)',
+                  lambda m: m.group(1) + m.group(2).replace('<li><h3>', '<li>' + MINI + '<h3>') + m.group(3),
+                  html, flags=re.S)
+
 for fn, t, d, pair, logo, body in pages:
-    open(os.path.join(root, fn), 'w').write(page(fn, t, d, pair, logo, body))
+    open(os.path.join(root, fn), 'w').write(minis(page(fn, t, d, pair, logo, body)))
     print('geschreven', fn)
