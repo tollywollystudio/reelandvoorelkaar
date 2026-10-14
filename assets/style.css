@@ -126,6 +126,7 @@ img, svg { max-width: 100%; }
 .panel { background: var(--tint); padding: 1.5rem; margin-top: 1rem; border-radius: 4px; }
 @media (min-width: 48em) { .panel { padding: 2.25rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; } }
 .panel p { color: var(--ink-soft); }
+.panel h2 span { display: block; font-weight: 400; color: var(--ink-soft); font-size: .8em; margin-top: .2em; }
 .panel > div > :last-child { margin-bottom: 0; }
 .panel .btn + .small { margin-top: .9rem; }
 .streetform { display: flex; gap: .5rem; flex-wrap: wrap; }

@@ -89,7 +89,7 @@ def lane(side, c1, c2, inner, id_=None, label=None):
 
 checker = '''        <div class="panel">
           <div>
-            <h2 id="h-check">Hoor ik erbij?</h2>
+            <h2 id="h-check">Hoor ik erbij? <span>Ben ik onderdeel van het Reeland?</span></h2>
             <p>Heb je een onderneming, school, vereniging of organisatie met een pand in het Reeland? Dan betaal je mee aan het fonds en kun je een aanvraag doen.</p>
           </div>
           <div>
