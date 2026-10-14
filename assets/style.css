@@ -339,3 +339,23 @@ body[data-pair="over"] { --btn2: var(--groen); }
   .flow li { padding-right: calc(var(--r) + .5rem); }
   .flow li:nth-child(even) { padding-left: calc(var(--r) + .5rem); padding-right: 0; }
 }
+
+/* Veelgestelde vragen: uitklaplijst met een klein bandje als teken */
+.faq { max-width: 46rem; margin-top: 1.25rem; border-bottom: 1px solid var(--line); }
+.faq details { border-top: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 1rem 2.75rem 1rem 0; font-weight: 700;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before, .faq summary::after {
+  content: ""; position: absolute; right: 0; width: 1.9rem; height: .65rem;
+  border: 7px solid; border-left: 0;
+}
+.faq summary::before { top: calc(50% - .65rem - 3.5px); border-color: var(--btn2); border-bottom: 0; border-top-right-radius: .7rem; }
+.faq summary::after { top: calc(50% - 3.5px); border-color: var(--baksteen); border-top: 0; border-bottom-right-radius: .7rem; }
+.faq details[open] summary::before { border-color: var(--baksteen); }
+.faq details[open] summary::after { border-color: var(--btn2); }
+.faq details[open] summary { color: var(--baksteen); }
+.faq summary:hover { color: var(--baksteen); }
+.faq details p { margin: 0 0 1.1rem; color: var(--ink-soft); max-width: 40rem; }

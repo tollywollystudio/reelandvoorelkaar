@@ -8,7 +8,7 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | --- | --- |
 | `index.html` | Home: kern, geldstroom, straatzoeker, thema's, eerstvolgende vergadering |
 | `gebied.html` | Vijf buurten, kaart, straatzoeker en stratenlijst |
-| `aanvragen.html` | Vijf stappen, checklist, vergaderdata, mailknop |
+| `aanvragen.html` | Vijf stappen, checklist, veelgestelde vragen, vergaderdata |
 | `over-ons.html` | Doel, bestuur, KvK en contact |
 | `aanvraag.html` | Aanvraagformulier met de vragen van ONS; maakt een mail aan voorzitter@ (script `assets/aanvraag.js`) |
 | `privacy.html`, `404.html` | Privacyverklaring en foutpagina |

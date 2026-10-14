@@ -150,7 +150,7 @@ home = f'''    <section class="hero" aria-labelledby="kop">
         <h2 id="h-meer" class="mt">Meer weten</h2>
         <ul class="list list--3">
           <li><a class="linkcard" href="gebied.html"><h3>Het gebied</h3><p>Wantijbuurt, Transvaalbuurt, Vogelbuurt, Indische Buurt en Land van Valk.</p></a></li>
-          <li><a class="linkcard" href="aanvragen.html"><h3>Aanvragen</h3><p>Wat erin moet, wanneer we vergaderen en wat we achteraf vragen.</p></a></li>
+          <li><a class="linkcard" href="aanvragen.html"><h3>Aanvragen</h3><p>Wat erin moet, wanneer we vergaderen, en antwoorden op veelgestelde vragen.</p></a></li>
           <li><a class="linkcard" href="over-ons.html"><h3>Over ons</h3><p>Wie in het bestuur zitten en hoe je ons bereikt.</p></a></li>
         </ul>''', label='h-meer')
 
@@ -219,7 +219,17 @@ aanvragen = f'''    <section class="pagehead" aria-labelledby="kop">
               <li>Foto's die we mogen gebruiken</li>
             </ul>
           </div>
-        </div>''', label='h-check') + lane('r', 'groen', 'oranje', f'''        <h2 id="h-data">Vergaderdata en indientermijn</h2>
+        </div>''', label='h-check') + lane('l', 'groen', 'oranje', '''        <h2 id="h-faq">Veelgestelde vragen</h2>
+        <div class="faq">
+          <details><summary>Moet ik lid worden of me aanmelden?</summary><p>Nee. Heb je een pand in het Reeland dat geen woning is, dan betaal je al mee via de OZB en kun je een aanvraag doen. Je hoeft nergens lid van te worden.</p></details>
+          <details><summary>Ik huur mijn pand. Kan ik dan ook aanvragen?</summary><p>Ja. De opslag wordt betaald door eigenaren én gebruikers van panden die geen woning zijn. Huurders horen er dus ook bij.</p></details>
+          <details><summary>Kan ik in mijn eentje een aanvraag doen?</summary><p>Het geld is bedoeld voor plannen die meerdere ondernemers of organisaties in het gebied ten goede komen. Een plan voor alleen je eigen bedrijf komt niet in aanmerking. Laat in je aanvraag zien wie er nog meer achter je plan staan.</p></details>
+          <details><summary>Wie beslist over mijn aanvraag?</summary><p>Het bestuur van de stichting, in een vergadering, bij meerderheid van stemmen. Heeft een bestuurslid zelf belang bij een aanvraag, dan praat en stemt die niet mee.</p></details>
+          <details><summary>Hoeveel geld kan ik aanvragen?</summary><p>Dat hangt af van je plan en van wat er voor het Reeland beschikbaar is. Er is geen vast bedrag. Neem gerust vooraf contact op, dan denken we mee over een realistische begroting.</p></details>
+          <details><summary>Wat gebeurt er met geld dat niet wordt gebruikt?</summary><p>Dat blijft gereserveerd voor het Reeland bij het Ondernemersfonds Dordrecht. Het gaat niet naar een andere wijk.</p></details>
+          <details><summary>Moet ik achteraf iets laten zien?</summary><p>Ja. Na afloop stuur je een kort verslag en de bonnen of facturen. Wij leggen op onze beurt verantwoording af aan het Ondernemersfonds Dordrecht.</p></details>
+          <details><summary>Ik weet niet zeker of mijn pand in het gebied ligt.</summary><p>Gebruik de straatzoeker op de pagina Het gebied, of mail ons. We zoeken het voor je uit.</p></details>
+        </div>''', id_='vragen', label='h-faq') + lane('r', 'groen', 'oranje', f'''        <h2 id="h-data">Vergaderdata en indientermijn</h2>
         <p class="intro">Het bestuur vergadert ongeveer vier keer per jaar. Stuur je aanvraag uiterlijk op de indiendatum, dan bespreken we hem in de vergadering die erbij hoort. Wil je je plan zelf toelichten of een vergadering bijwonen? Neem dan vooraf contact op.</p>
         <table class="dates">
           <thead><tr><th scope="col">Uiterlijk indienen</th><th scope="col">Vergadering</th></tr></thead>
