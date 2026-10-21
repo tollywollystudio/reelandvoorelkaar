@@ -133,7 +133,7 @@ home = f'''    <section class="hero" aria-labelledby="kop">
           <li><span class="flow__label">Stap 3</span><h3>Het komt terug</h3><p>Ondernemers en organisaties uit het Reeland dienen samen een plan in. Het bestuur beoordeelt de aanvraag en ziet erop toe dat het geld goed wordt besteed.</p></li>
         </ol>''', label='h-werkt') + lane('l', 'groen', 'oranje', checker.format(k='home') + '''
         <p class="small mt-s">Of bekijk <a href="gebied.html">de vijf buurten</a>.</p>''', id_='hoor-ik-erbij', label='h-check') + lane('r', 'oranje', 'oker', '''        <h2 id="h-thema">Waarvoor kun je aanvragen?</h2>
-        <p class="intro">Voor plannen van en voor ondernemers die ook goed zijn voor het gebied. Hoe meer ondernemers en organisaties uit het Reeland je plan steunen, hoe sterker je aanvraag. Bijvoorbeeld op deze terreinen:</p>
+        <p class="intro">Voor activiteiten die de economische structuur en het vestigingsklimaat in het Reeland versterken en van maatschappelijk belang zijn. Hoe meer ondernemers en organisaties uit het Reeland je plan steunen, hoe sterker je aanvraag. Bijvoorbeeld op deze terreinen:</p>
         <ul class="list list--2 tiles">
           <li><h3>Samen organiseren</h3><p>Ondernemers in het Reeland beter met elkaar verbinden en organiseren.</p></li>
           <li><h3>Gezamenlijke activiteiten</h3><p>Activiteiten die ondernemers samen opzetten, voor het hele gebied.</p></li>
@@ -353,6 +353,7 @@ aanvraag = f'''    <section class="pagehead" aria-labelledby="kop">
           <fieldset class="group"><legend>Over je plan</legend>
             {veld('titel', 'Naam van je initiatief')}
             {veld('beschrijving', 'Korte beschrijving van het initiatief', 'textarea', hint='Wat ga je doen, waar en voor wie?')}
+            {veld('belang', 'Op welke wijze versterkt je plan de economische structuur en het vestigingsklimaat in het Reeland, en wat is het maatschappelijk belang?', 'textarea')}
             {veld('ontstaan', 'Hoe zijn het idee en de besluitvorming tot stand gekomen?', 'textarea')}
             {keuze('draagvlak', 'Wordt het plan breed en aantoonbaar gesteund door meerdere ondernemingen of organisaties in het Reeland?', ['Ja', 'Nee'])}
             {veld('steun', 'Welke ondernemingen of organisaties steunen het plan?', 'textarea', req=False, hint='Naam en contactpersoon. Een lijst kun je ook als bijlage meesturen.')}

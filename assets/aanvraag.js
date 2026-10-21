@@ -13,7 +13,7 @@
     ['Organisatie of bedrijf', 'organisatie'], ['Adres vestiging', 'adres'], ['Eigenaar of huurder', 'eigendom'],
     ['Naam', 'naam'], ['Telefoon', 'telefoon'], ['Mail', 'email'],
     ['Over het plan', null],
-    ['Naam initiatief', 'titel'], ['Beschrijving', 'beschrijving'], ['Ontstaan en besluitvorming', 'ontstaan'],
+    ['Naam initiatief', 'titel'], ['Beschrijving', 'beschrijving'], ['Economische structuur, vestigingsklimaat en maatschappelijk belang', 'belang'], ['Ontstaan en besluitvorming', 'ontstaan'],
     ['Breed gesteund door ondernemers/organisaties in het Reeland', 'draagvlak'], ['Steun van', 'steun'],
     ['Eerder aangevraagd bij ander trekkingsgebied', 'eerder'], ['Startdatum', 'start'], ['Looptijd', 'looptijd'],
     ['Geld', null],
