@@ -16,7 +16,6 @@ Website van Stichting Reeland voor Elkaar, trekkingsgebied 15 van het Ondernemer
 | `assets/data.js` | Vergaderdata en stratenlijst |
 | `assets/style.css` | Opmaak; palet en maten bovenaan als variabelen |
 | `assets/script.js` | Straatzoeker, datums, stratenlijst |
-| `assets/gate.js` | Tijdelijke toegangscode tijdens de opbouw |
 | `assets/logo/` | Logo van Leen Oud: `logo-1` t/m `logo-5`, `logo-wit`, origineel |
 | `assets/foto-oprichting.jpg` | Foto oprichting bij de notaris, 25-09-2025 (Peter ter Hark) |
 | `assets/slinger.svg`, `assets/deelafbeelding.png` | Stijlelement (twee kolommen, naar het blad van Leen; opnieuw maken met `tools/maak-stijlelement.py`) en afbeelding voor delen |
@@ -34,10 +33,6 @@ python3 tools/maak-paginas.py .
 ## Vergaderdatum of straat toevoegen
 
 Alleen in `assets/data.js`. Datums als JJJJ-MM-DD; `indienen: null` toont "nader te bepalen". Zet `stratenCompleet` op `true` zodra de stratenlijst volledig is.
-
-## Toegangscode tijdens de opbouw
-
-`assets/gate.js` toont een codescherm en de pagina's hebben `noindex`. Dit is geen beveiliging: de bestanden staan openbaar op GitHub. Bij livegang: in `tools/maak-paginas.py` de regels met `gate.js` en `robots` weghalen, script draaien, `assets/gate.js` verwijderen.
 
 ## Lokaal bekijken
 

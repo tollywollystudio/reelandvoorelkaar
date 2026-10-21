@@ -27,9 +27,7 @@ def page(fn, title, desc, pair, logo, body):
   <meta property="og:image" content="https://reelandvoorelkaar.nl/assets/deelafbeelding.png">
   <meta property="og:url" content="https://reelandvoorelkaar.nl/{fn}">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="assets/style.css?v={V}">
-  <script src="assets/gate.js?v={V}"></script>
 </head>
 <body data-pair="{pair}">
   <a class="skip" href="#inhoud">Naar de inhoud</a>
