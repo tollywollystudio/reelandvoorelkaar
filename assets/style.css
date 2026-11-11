@@ -393,3 +393,11 @@ body[data-pair="over"] { --btn2: var(--groen); }
 .streetgroups { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 1.5rem 1.5rem; margin-top: 1.25rem; }
 .streetgroups h4 { margin: 0 0 .4rem; font-size: .95rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); }
 .streetgroups ul { list-style: none; padding: 0; margin: 0; font-size: .9rem; line-height: 1.6; color: var(--ink-soft); }
+
+/* Blok Ondernemersfonds Dordrecht op Over ons */
+.ons { display: grid; gap: 1.25rem; margin-top: 3rem; }
+@media (min-width: 48em) { .ons { grid-template-columns: 12rem 1fr; gap: 2.5rem; align-items: start; } }
+.ons__logo { display: block; max-width: 12rem; }
+.ons__logo img { display: block; width: 100%; height: auto; }
+.ons h2 { margin-top: 0; }
+.ons p { color: var(--ink-soft); }

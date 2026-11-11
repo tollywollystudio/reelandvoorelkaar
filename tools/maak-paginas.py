@@ -266,13 +266,20 @@ over = f'''    <section class="pagehead" aria-labelledby="kop">
           <figcaption>Oprichting van de stichting bij Notariaat Nonhebel in Dordrecht, 25 september 2025. Foto: Peter ter Hark.</figcaption>
         </figure>
         <h2 id="h-bestuur" class="mt">Bestuur</h2>
-        <p class="intro">Drie ondernemers uit het Reeland. Ze zitten in het bestuur op persoonlijke titel, niet namens hun eigen bedrijf. We zoeken nog versterking: ben jij ondernemer in het Reeland en wil je meedenken? Laat het ons weten.</p>
+        <p class="intro">Twee ondernemers uit het Reeland. Ze zitten in het bestuur op persoonlijke titel, niet namens hun eigen bedrijf. We zoeken nog versterking: ben jij ondernemer in het Reeland en wil je meedenken? Laat het ons weten.</p>
         <!-- [BESTUUR] per persoon foto, twee zinnen en eigen contactgegevens (voorstel Jolita) -->
         <ul class="board">
           <li><strong>Jolita Meuldijk</strong><span>voorzitter. Eigenaar van Het Schapenhok aan de Reeweg Oost.</span></li>
           <li><strong>Akhshid Zia</strong><span>penningmeester. Ondernemer van PLUS Vogelplein, de supermarkt op het Vogelplein.</span></li>
-          <li><strong>Wouter Sieuwerts</strong><span>bestuurslid. Eigenaar van Tolly Wolly Studio en Lexlab aan de Bötgensstraat.</span></li>
-        </ul>''', label='h-bestuur') + lane('l', 'baksteen', 'oker', f'''        <h2 id="h-contact">Contact en gegevens</h2>
+        </ul>
+        <div class="ons">
+          <a class="ons__logo" href="https://ondernemersfondsdordrecht.nl/"><img src="assets/logo/ons-dordrecht.svg" alt="Ondernemersfonds Dordrecht" width="376" height="168" loading="lazy"></a>
+          <div>
+            <h2 id="h-ons">Onderdeel van het Ondernemersfonds Dordrecht</h2>
+            <p>Ondernemers en organisaties met een pand in Dordrecht betalen via een opslag op de onroerendezaakbelasting mee aan het Ondernemersfonds Dordrecht (ONS). Het fonds verdeelt dat geld over 24 trekkingsgebieden en een stadsbreed deel. Stichting Reeland voor Elkaar beheert het budget van trekkingsgebied 15, Het Reeland.</p>
+            <p><a href="https://ondernemersfondsdordrecht.nl/">Meer over het Ondernemersfonds Dordrecht</a></p>
+          </div>
+        </div>''', label='h-bestuur') + lane('l', 'baksteen', 'oker', f'''        <h2 id="h-contact">Contact en gegevens</h2>
         <p class="intro">Vragen, twijfel of je erbij hoort, of wil je je plan eerst bespreken? Mail ons. Je bent ook welkom om vooraf een vergadering bij te wonen.</p>
         <dl class="facts">
           <dt>Mail</dt><dd><a href="mailto:{MAIL}">{MAIL}</a></dd>
