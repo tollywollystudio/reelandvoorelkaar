@@ -273,12 +273,10 @@ over = f'''    <section class="pagehead" aria-labelledby="kop">
           <li><strong>Akhshid Zia</strong><span>penningmeester. Ondernemer van PLUS Vogelplein, de supermarkt op het Vogelplein.</span></li>
         </ul>
         <div class="ons">
-          <a class="ons__logo" href="https://ondernemersfondsdordrecht.nl/"><img src="assets/logo/ons-dordrecht.svg" alt="Ondernemersfonds Dordrecht" width="376" height="168" loading="lazy"></a>
-          <div>
-            <h2 id="h-ons">Onderdeel van het Ondernemersfonds Dordrecht</h2>
-            <p>Ondernemers en organisaties met een pand in Dordrecht betalen via een opslag op de onroerendezaakbelasting mee aan het Ondernemersfonds Dordrecht (ONS). Het fonds verdeelt dat geld over 24 trekkingsgebieden en een stadsbreed deel. Stichting Reeland voor Elkaar beheert het budget van trekkingsgebied 15, Het Reeland.</p>
-            <p><a href="https://ondernemersfondsdordrecht.nl/">Meer over het Ondernemersfonds Dordrecht</a></p>
-          </div>
+          <h2 id="h-ons">Onderdeel van het Ondernemersfonds Dordrecht</h2>
+          <a class="ons__logo" href="https://ondernemersfondsdordrecht.nl/"><img src="assets/logo/ons-dordrecht.svg" alt="Ondernemersfonds Dordrecht" width="319" height="111" loading="lazy"></a>
+          <p>Ondernemers en organisaties met een pand in Dordrecht betalen via een opslag op de onroerendezaakbelasting mee aan het Ondernemersfonds Dordrecht (ONS). Het fonds verdeelt dat geld over 24 trekkingsgebieden en een stadsbreed deel. Stichting Reeland voor Elkaar beheert het budget van trekkingsgebied 15, Het Reeland.</p>
+          <p><a href="https://ondernemersfondsdordrecht.nl/">Meer over het Ondernemersfonds Dordrecht</a></p>
         </div>''', label='h-bestuur') + lane('l', 'baksteen', 'oker', f'''        <h2 id="h-contact">Contact en gegevens</h2>
         <p class="intro">Vragen, twijfel of je erbij hoort, of wil je je plan eerst bespreken? Mail ons. Je bent ook welkom om vooraf een vergadering bij te wonen.</p>
         <dl class="facts">
